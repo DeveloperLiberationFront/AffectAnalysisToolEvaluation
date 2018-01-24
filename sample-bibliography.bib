@@ -1,0 +1,548 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+%%%     author          = "Gerry Murray",
+%%%     version         = "1.2",
+%%%     date            = "2 April 2012",
+%%%     filename        = "acmsmall-sample-bibfile.bib",
+%%%     address         = "ACM, NY",
+%%%     email           = "murray at hq.acm.org",
+%%%     codetable       = "ISO/ASCII",
+%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
+%%%     supported       = "yes",
+%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+%%%                        that 'match' the examples provided in the Specifications Document
+%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
+%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
+%%%                        so as to obtain the appropriate ACM Reference Format output.
+%%%                        It also contains many 'Standard Abbreviations'. "
+%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+@inproceedings{wilson2005recognizing,
+  title={Recognizing contextual polarity in phrase-level sentiment analysis},
+  author={Wilson, Theresa and Wiebe, Janyce and Hoffmann, Paul},
+  booktitle={Proceedings of the conference on human language technology and empirical methods in natural language processing},
+  pages={347--354},
+  year={2005},
+  organization={Association for Computational Linguistics}
+}
+@Article{Abril07,
+  author        = "Patricia S. Abril and Robert Plant",
+  title         = "The patent holder's dilemma: Buy, sell, or troll?",
+  journal       = "Communications of the ACM",
+  volume        = "50",
+  number        = "1",
+  month         = jan,
+  year          = "2007",
+  pages         = "36--44",
+  doi           = "10.1145/1188913.1188915",
+  url           = "http://doi.acm.org/10.1145/1219092.1219093",
+  note          = "",
+}
+
+@article{khan2011moods,
+  title={Do moods affect programmers’ debug performance?},
+  author={Khan, Iftikhar Ahmed and Brinkman, Willem-Paul and Hierons, Robert M},
+  journal={Cognition, Technology \& Work},
+  volume={13},
+  number={4},
+  pages={245--258},
+  year={2011},
+  publisher={Springer}
+}
+@article{jongeling2017negative,
+  title={On negative results when using sentiment analysis tools for software engineering research},
+  author={Jongeling, Robbert and Sarkar, Proshanta and Datta, Subhajit and Serebrenik, Alexander},
+  journal={Empirical Software Engineering},
+  pages={1--42},
+  year={2017},
+  publisher={Springer}
+}
+ @misc{ wiki:pol,
+   author = "Wikipedia contributors",
+   title = "Politeness --- {W}ikipedia{,} The Free Encyclopedia",
+   year = "2018",
+   url = "https://en.wikipedia.org/wiki/Politeness",
+   note = "[Online; accessed 18 Jan, 2018]"
+ }
+ @inproceedings{murgia2014developers,
+  title={Do developers feel emotions? an exploratory analysis of emotions in software artifacts},
+  author={Murgia, Alessandro and Tourani, Parastou and Adams, Bram and Ortu, Marco},
+  booktitle={Proceedings of the 11th working conference on mining software repositories},
+  pages={262--271},
+  year={2014},
+  organization={ACM}
+}
+@article{graziotin2014happy,
+  title={Happy software developers solve problems better: psychological measurements in empirical software engineering},
+  author={Graziotin, Daniel and Wang, Xiaofeng and Abrahamsson, Pekka},
+  journal={PeerJ},
+  volume={2},
+  pages={e289},
+  year={2014},
+  publisher={PeerJ Inc.}
+}
+@inproceedings{ortu2015bullies,
+  title={Are bullies more productive?: empirical study of affectiveness vs. issue fixing time},
+  author={Ortu, Marco and Adams, Bram and Destefanis, Giuseppe and Tourani, Parastou and Marchesi, Michele and Tonelli, Roberto},
+  booktitle={Proceedings of the 12th Working Conference on Mining Software Repositories},
+  pages={303--313},
+  year={2015},
+  organization={IEEE Press}
+}
+@book{parkinson1996changing,
+  title={Changing moods: The psychology of mood and mood regulation},
+  author={Parkinson, Brian and Totterdell, Peter and Briner, Rob B and Reynolds, SA},
+  year={1996},
+  publisher={Longman}
+}
+@article{curtis1988field,
+  title={A field study of the software design process for large systems},
+  author={Curtis, Bill and Krasner, Herb and Iscoe, Neil},
+  journal={Communications of the ACM},
+  volume={31},
+  number={11},
+  pages={1268--1287},
+  year={1988},
+  publisher={ACM}
+}
+@inproceedings{storey2010impact,
+  title={The impact of social media on software engineering practices and tools},
+  author={Storey, Margaret-Anne and Treude, Christoph and van Deursen, Arie and Cheng, Li-Te},
+  booktitle={Proceedings of the FSE/SDP workshop on Future of software engineering research},
+  pages={359--364},
+  year={2010},
+  organization={ACM}
+}
+@inproceedings{steinmacher2015social,
+  title={Social barriers faced by newcomers placing their first contribution in open source software projects},
+  author={Steinmacher, Igor and Conte, Tayana and Gerosa, Marco Aur{\'e}lio and Redmiles, David},
+  booktitle={Proceedings of the 18th ACM conference on Computer supported cooperative work \& social computing},
+  pages={1379--1392},
+  year={2015},
+  organization={ACM}
+}
+@misc{montoyo2012subjectivity,
+  title={Subjectivity and sentiment analysis: An overview of the current state of the area and envisaged developments},
+  author={Montoyo, Andr{\'e}s and Mart{\'\i}Nez-Barco, Patricio and Balahur, Alexandra},
+  year={2012},
+  publisher={Elsevier}
+}
+@article{wiebe2005annotating,
+  title={Annotating expressions of opinions and emotions in language},
+  author={Wiebe, Janyce and Wilson, Theresa and Cardie, Claire},
+  journal={Language resources and evaluation},
+  volume={39},
+  number={2},
+  pages={165--210},
+  year={2005},
+  publisher={Springer}
+}
+@article{gamon2005pulse,
+  title={Pulse: Mining customer opinions from free text},
+  author={Gamon, Michael and Aue, Anthony and Corston-Oliver, Simon and Ringger, Eric},
+  journal={Lecture notes in computer science},
+  volume={3646},
+  pages={121--132},
+  year={2005},
+  publisher={Springer}
+}
+@inproceedings{novielli2015challenges,
+  title={The challenges of sentiment detection in the social programmer ecosystem},
+  author={Novielli, Nicole and Calefato, Fabio and Lanubile, Filippo},
+  booktitle={Proceedings of the 7th International Workshop on Social Software Engineering},
+  pages={33--40},
+  year={2015},
+  organization={ACM}
+}
+@inproceedings{ahmed2017senticr,
+  title={SentiCR: a customized sentiment analysis tool for code review interactions},
+  author={Ahmed, Toufique and Bosu, Amiangshu and Iqbal, Anindya and Rahimi, Shahram},
+  booktitle={Proceedings of the 32nd IEEE/ACM International Conference on Automated Software Engineering},
+  pages={106--111},
+  year={2017},
+  organization={IEEE Press}
+}
+
+@inproceedings{gousios2014lean,
+  title={Lean GHTorrent: GitHub data on demand},
+  author={Gousios, Georgios and Vasilescu, Bogdan and Serebrenik, Alexander and Zaidman, Andy},
+  booktitle={Proceedings of the 11th working conference on mining software repositories},
+  pages={384--387},
+  year={2014},
+  organization={ACM}
+}
+@article{pang2008opinion,
+  title={Opinion mining and sentiment analysis},
+  author={Pang, Bo and Lee, Lillian and others},
+  journal={Foundations and Trends{\textregistered} in Information Retrieval},
+  volume={2},
+  number={1--2},
+  pages={1--135},
+  year={2008},
+  publisher={Now Publishers, Inc.}
+}
+@inproceedings{guzman2014sentiment,
+  title={Sentiment analysis of commit comments in GitHub: an empirical study},
+  author={Guzman, Emitza and Az{\'o}car, David and Li, Yang},
+  booktitle={Proceedings of the 11th Working Conference on Mining Software Repositories},
+  pages={352--355},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{pletea2014security,
+  title={Security and emotion: sentiment analysis of security discussions on GitHub},
+  author={Pletea, Daniel and Vasilescu, Bogdan and Serebrenik, Alexander},
+  booktitle={Proceedings of the 11th working conference on mining software repositories},
+  pages={348--351},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{garcia2013role,
+  title={The role of emotions in contributors activity: A case study on the gentoo community},
+  author={Garcia, David and Zanetti, Marcelo Serrano and Schweitzer, Frank},
+  booktitle={Cloud and green computing (CGC), 2013 third international conference on},
+  pages={410--417},
+  year={2013},
+  organization={IEEE}
+}
+@inproceedings{islam2016towards,
+  title={Towards understanding and exploiting developers' emotional variations in software engineering},
+  author={Islam, Md Rakibul and Zibran, Minhaz F},
+  booktitle={Software Engineering Research, Management and Applications (SERA), 2016 IEEE 14th International Conference on},
+  pages={185--192},
+  year={2016},
+  organization={IEEE}
+}
+@inproceedings{guzman2013towards,
+  title={Towards emotional awareness in software development teams},
+  author={Guzman, Emitza and Bruegge, Bernd},
+  booktitle={Proceedings of the 2013 9th joint meeting on foundations of software engineering},
+  pages={671--674},
+  year={2013},
+  organization={ACM}
+}
+@inproceedings{novielli2014towards,
+  title={Towards discovering the role of emotions in stack overflow},
+  author={Novielli, Nicole and Calefato, Fabio and Lanubile, Filippo},
+  booktitle={Proceedings of the 6th international workshop on social software engineering},
+  pages={33--36},
+  year={2014},
+  organization={ACM}
+}
+
+
+@inproceedings{ortu2015would,
+  title={Would you mind fixing this issue?},
+  author={Ortu, Marco and Destefanis, Giuseppe and Kassab, Mohamad and Counsell, Steve and Marchesi, Michele and Tonelli, Roberto},
+  booktitle={International Conference on Agile Software Development},
+  pages={129--140},
+  year={2015},
+  organization={Springer}
+}
+@article{wang2008politeness,
+  title={The politeness effect: Pedagogical agents and learning outcomes},
+  author={Wang, Ning and Johnson, W Lewis and Mayer, Richard E and Rizzo, Paola and Shaw, Erin and Collins, Heather},
+  journal={International Journal of Human-Computer Studies},
+  volume={66},
+  number={2},
+  pages={98--112},
+  year={2008},
+  publisher={Elsevier}
+}
+@inproceedings{tsay2014let,
+  title={Let's talk about it: evaluating contributions through discussion in GitHub},
+  author={Tsay, Jason and Dabbish, Laura and Herbsleb, James},
+  booktitle={Proceedings of the 22nd ACM SIGSOFT international symposium on foundations of software engineering},
+  pages={144--154},
+  year={2014},
+  organization={ACM}
+}
+@article{brownsoftware,
+  title={How Software Users Recommend Tools to Each Other},
+  author={Brown, Chris and Middleton, Justin and Sharma, Esha and Murphy-Hill, Emerson}
+}
+@inproceedings{dewan2015towards,
+  title={Towards emotion-based collaborative software engineering},
+  author={Dewan, Prasun},
+  booktitle={Proceedings of the Eighth International Workshop on Cooperative and Human Aspects of Software Engineering},
+  pages={109--112},
+  year={2015},
+  organization={IEEE Press}
+}
+@article{calefato2017sentiment,
+  title={Sentiment Polarity Detection for Software Development},
+  author={Calefato, Fabio and Lanubile, Filippo and Maiorano, Federico and Novielli, Nicole},
+  journal={Empirical Software Engineering},
+  pages={1--31},
+  year={2017},
+  publisher={Springer}
+}
+@article{danescu2013computational,
+  title={A computational approach to politeness with application to social factors},
+  author={Danescu-Niculescu-Mizil, Cristian and Sudhof, Moritz and Jurafsky, Dan and Leskovec, Jure and Potts, Christopher},
+  journal={arXiv preprint arXiv:1306.6078},
+  year={2013}
+}
+@article{thelwall2010sentiment,
+  title={Sentiment strength detection in short informal text},
+  author={Thelwall, Mike and Buckley, Kevan and Paltoglou, Georgios and Cai, Di and Kappas, Arvid},
+  journal={Journal of the Association for Information Science and Technology},
+  volume={61},
+  number={12},
+  pages={2544--2558},
+  year={2010},
+  publisher={Wiley Online Library}
+}
+@book{bird2009natural,
+  title={Natural language processing with Python: analyzing text with the natural language toolkit},
+  author={Bird, Steven and Klein, Ewan and Loper, Edward},
+  year={2009},
+  publisher={" O'Reilly Media, Inc."}
+}
+@article{rousinopoulos2014sentiment,
+  title={SENTIMENT ANALYSIS OF FREE/OPEN SOURCE DEVELOPERS: PRELIMINARY FINDINGS FROM A CASE STUDY/AN{\'A}LISE DE SENTIMENTOS DE DESENVOLVEDORES DE SOFTWARE LIVRE: ACHADOS PRELIMINARES DE UM ESTUDO DE CASO},
+  author={Rousinopoulos, Athanasios-Ilias and Robles, Gregorio and Gonz{\'a}lez-Barahona, Jes{\'u}s M},
+  journal={Revista Electronica de Sistemas de Informa{\c{c}}ao},
+  volume={13},
+  number={2},
+  pages={1},
+  year={2014},
+  publisher={Faculdade Cenecista de Campo Largo-FACECLA}
+}
+@inproceedings{socher2013recursive,
+  title={Recursive deep models for semantic compositionality over a sentiment treebank},
+  author={Socher, Richard and Perelygin, Alex and Wu, Jean and Chuang, Jason and Manning, Christopher D and Ng, Andrew and Potts, Christopher},
+  booktitle={Proceedings of the 2013 conference on empirical methods in natural language processing},
+  pages={1631--1642},
+  year={2013}
+}
+@inproceedings{mohammad2016practical,
+  title={A Practical Guide to Sentiment Annotation: Challenges and Solutions.},
+  author={Mohammad, Saif},
+  booktitle={WASSA@ NAACL-HLT},
+  pages={174--179},
+  year={2016}
+}
+@article{landis1977measurement,
+  title={The measurement of observer agreement for categorical data},
+  author={Landis, J Richard and Koch, Gary G},
+  journal={biometrics},
+  pages={159--174},
+  year={1977},
+  publisher={JSTOR}
+}
+@book{brown1987politeness,
+  title={Politeness: Some universals in language usage},
+  author={Brown, Penelope and Levinson, Stephen C},
+  volume={4},
+  year={1987},
+  publisher={Cambridge university press}
+}
+@article{culpeper1996towards,
+  title={Towards an anatomy of impoliteness},
+  author={Culpeper, Jonathan},
+  journal={Journal of pragmatics},
+  volume={25},
+  number={3},
+  pages={349--367},
+  year={1996},
+  publisher={Elsevier}
+}
