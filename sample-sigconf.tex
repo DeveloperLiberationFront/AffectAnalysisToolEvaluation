@@ -1,13 +1,14 @@
 \documentclass[sigconf]{acmart}
 
 \usepackage{booktabs} % For formal tables
-
+\usepackage{array}
+\usepackage{tablefootnote}
 
 % Copyright
 %\setcopyright{none}
 %\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
-\setcopyright{rightsretained}
+% \setcopyright{rightsretained}
 %\setcopyright{usgov}
 %\setcopyright{usgovmixed}
 %\setcopyright{cagov}
@@ -15,35 +16,35 @@
 
 
 % DOI
-\acmDOI{10.475/123_4}
+% \acmDOI{10.475/123_4}
 
-% ISBN
-\acmISBN{123-4567-24-567/08/06}
+% % ISBN
+% \acmISBN{123-4567-24-567/08/06}
 
 %Conference
-\acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
-  Paso, Texas USA}
-\acmYear{1997}
-\copyrightyear{2016}
+% \acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
+%   Paso, Texas USA}
+% \acmYear{1997}
+% \copyrightyear{2016}
 
 
-\acmArticle{4}
-\acmPrice{15.00}
+% \acmArticle{4}
+% \acmPrice{15.00}
 
 % These commands are optional
 %\acmBooktitle{Transactions of the ACM Woodstock conference}
-\editor{Jennifer B. Sartor}
-\editor{Theo D'Hondt}
-\editor{Wolfgang De Meuter}
+% \editor{Jennifer B. Sartor}
+% \editor{Theo D'Hondt}
+% \editor{Wolfgang De Meuter}
 
 
 \begin{document}
-\title{On possibilities of doing Sentiment \& Politeness Analysis on GitHub comments}
-\titlenote{Produces the permission block, and
-  copyright information}
-\subtitle{Extended Abstract}
-\subtitlenote{The full version of the author's guide is available as
-  \texttt{acmart.pdf} document}
+\title{Sentiment and Politeness Analysis Tools on\\Developer Discussions Are Unreliable, but so Are People}
+% \titlenote{Produces the permission block, and
+%   copyright information}
+% \subtitle{put Extended Abstract, links for resources}
+% \subtitlenote{The full version of the author's guide is available as
+%   \texttt{acmart.pdf} document}
 
 \author{Nasif Imtiaz}
 %\authornote{Dr.~Trovato insisted his name be first.}
@@ -56,6 +57,39 @@
   \postcode{43017-6221}
 }
 \email{simtiaz@ncsu.edu}
+\author{Emerson Murphy-Hill}
+%\authornote{Dr.~Trovato insisted his name be first.}
+%\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{North Carolina State University}
+  \streetaddress{890 Oval Drive}
+  \city{Raleigh}
+  \state{North Carolina}
+  \postcode{43017-6221}
+}
+\email{ermurph3@ncsu.edu}
+\author{Justin Middleton}
+%\authornote{Dr.~Trovato insisted his name be first.}
+%\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{North Carolina State University}
+  \streetaddress{890 Oval Drive}
+  \city{Raleigh}
+  \state{North Carolina}
+  \postcode{43017-6221}
+}
+\email{jamiddl2@ncsu.edu}
+\author{Peter Girouard}
+%\authornote{Dr.~Trovato insisted his name be first.}
+%\orcid{1234-5678-9012}
+\affiliation{%
+  \institution{North Carolina State University}
+  \streetaddress{890 Oval Drive}
+  \city{Raleigh}
+  \state{North Carolina}
+  \postcode{43017-6221}
+}
+\email{plgiroua@ncsu.edu }
 \begin{comment}
 \author{Ben Trovatohhh}
 \authornote{Dr.~Trovato insisted his name be first.}
@@ -136,7 +170,11 @@
 \begin{abstract}
 %establish a clear reason why this research is important
 % constant terminology - textual discussions
-The software development process might have the probability to be influenced by how engineers communicate through their collaborative platforms, how politely they talk and how they choose their words. However, to study such questions we first need a reliable automated technique that can process the languages found in these platforms, and give reasonable ratings. In our study, we evaluate popular existing tools for “sentiment” and “politeness” analysis over a dataset of GitHub comments. We identified the best sentiment detection tool, evaluated one politeness marker tool and verified in what aspects do they give an acceptable result and where they fail. We also developed an annotation scheme to rate on politeness for texts in GitHub community
+Many software engineering researchers use sentiment and politeness analysis tools to study the emotional environment within collaborative software development. 
+However, most papers that use these tools rarely establish their reliability.
+In this paper, we evaluate popular existing tools for sentiment and politeness detection over a dataset of 589 manually rated GitHub comments. 
+We also develop a coding scheme on how to quantify politeness for conversational texts found in the collaborative platforms. 
+We find that not only do the tools have a low agreement with the human rating on sentiment and politeness, human raters also have a low agreement among themselves. 
 \end{abstract}
 
 %
@@ -144,38 +182,38 @@ The software development process might have the probability to be influenced by 
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below.
 %
-\begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>
-\end{CCSXML}
+% \begin{CCSXML}
+% <ccs2012>
+%  <concept>
+%   <concept_id>10010520.10010553.10010562</concept_id>
+%   <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%   <concept_significance>500</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010575.10010755</concept_id>
+%   <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%   <concept_significance>300</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10010520.10010553.10010554</concept_id>
+%   <concept_desc>Computer systems organization~Robotics</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+%  <concept>
+%   <concept_id>10003033.10003083.10003095</concept_id>
+%   <concept_desc>Networks~Network reliability</concept_desc>
+%   <concept_significance>100</concept_significance>
+%  </concept>
+% </ccs2012>
+% \end{CCSXML}
 
-\ccsdesc[500]{Computer systems organization~Embedded systems}
-\ccsdesc[300]{Computer systems organization~Redundancy}
-\ccsdesc{Computer systems organization~Robotics}
-\ccsdesc[100]{Networks~Network reliability}
+% \ccsdesc[500]{Computer systems organization~Embedded systems}
+% \ccsdesc[300]{Computer systems organization~Redundancy}
+% \ccsdesc{Computer systems organization~Robotics}
+% \ccsdesc[100]{Networks~Network reliability}
 
 
-\keywords{ACM proceedings, \LaTeX, text tagging}
+\keywords{sentiment, politeness analysis, GitHub comments }
 
 
 \maketitle
