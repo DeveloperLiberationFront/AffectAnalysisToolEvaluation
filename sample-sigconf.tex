@@ -3,6 +3,8 @@
 \usepackage{booktabs} % For formal tables
 \usepackage{array}
 \usepackage{tablefootnote}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{flushend}
 
 % Copyright
 %\setcopyright{none}
@@ -20,6 +22,8 @@
 
 % % ISBN
 % \acmISBN{123-4567-24-567/08/06}
+
+\acmConference[SEmotion 18]{ICSE}{Workshop}{E}
 
 %Conference
 % \acmConference[WOODSTOCK'97]{ACM Woodstock conference}{July 1997}{El
@@ -46,7 +50,7 @@
 % \subtitlenote{The full version of the author's guide is available as
 %   \texttt{acmart.pdf} document}
 
-\author{Nasif Imtiaz}
+\author{Nasif Imtiaz, Justin Middleton, Peter Girouard, and Emerson Murphy-Hill }
 %\authornote{Dr.~Trovato insisted his name be first.}
 %\orcid{1234-5678-9012}
 \affiliation{%
@@ -56,40 +60,40 @@
   \state{North Carolina}
   \postcode{43017-6221}
 }
-\email{simtiaz@ncsu.edu}
-\author{Emerson Murphy-Hill}
-%\authornote{Dr.~Trovato insisted his name be first.}
-%\orcid{1234-5678-9012}
-\affiliation{%
-  \institution{North Carolina State University}
-  \streetaddress{890 Oval Drive}
-  \city{Raleigh}
-  \state{North Carolina}
-  \postcode{43017-6221}
-}
-\email{ermurph3@ncsu.edu}
-\author{Justin Middleton}
-%\authornote{Dr.~Trovato insisted his name be first.}
-%\orcid{1234-5678-9012}
-\affiliation{%
-  \institution{North Carolina State University}
-  \streetaddress{890 Oval Drive}
-  \city{Raleigh}
-  \state{North Carolina}
-  \postcode{43017-6221}
-}
-\email{jamiddl2@ncsu.edu}
-\author{Peter Girouard}
-%\authornote{Dr.~Trovato insisted his name be first.}
-%\orcid{1234-5678-9012}
-\affiliation{%
-  \institution{North Carolina State University}
-  \streetaddress{890 Oval Drive}
-  \city{Raleigh}
-  \state{North Carolina}
-  \postcode{43017-6221}
-}
-\email{plgiroua@ncsu.edu }
+\email{{simtiaz, jamiddl2, plgiroua, ermurph3}@ncsu.edu}
+% \author{Emerson Murphy-Hill}
+% %\authornote{Dr.~Trovato insisted his name be first.}
+% %\orcid{1234-5678-9012}
+% \affiliation{%
+%   \institution{North Carolina State University}
+%   \streetaddress{890 Oval Drive}
+%   \city{Raleigh}
+%   \state{North Carolina}
+%   \postcode{43017-6221}
+% }
+% \email{ermurph3@ncsu.edu}
+% \author{Justin Middleton}
+% %\authornote{Dr.~Trovato insisted his name be first.}
+% %\orcid{1234-5678-9012}
+% \affiliation{%
+%   \institution{North Carolina State University}
+%   \streetaddress{890 Oval Drive}
+%   \city{Raleigh}
+%   \state{North Carolina}
+%   \postcode{43017-6221}
+% }
+% \email{jamiddl2@ncsu.edu}
+% \author{Peter Girouard}
+% %\authornote{Dr.~Trovato insisted his name be first.}
+% %\orcid{1234-5678-9012}
+% \affiliation{%
+%   \institution{North Carolina State University}
+%   \streetaddress{890 Oval Drive}
+%   \city{Raleigh}
+%   \state{North Carolina}
+%   \postcode{43017-6221}
+% }
+% \email{plgiroua@ncsu.edu }
 \begin{comment}
 \author{Ben Trovatohhh}
 \authornote{Dr.~Trovato insisted his name be first.}
@@ -171,10 +175,10 @@
 %establish a clear reason why this research is important
 % constant terminology - textual discussions
 Many software engineering researchers use sentiment and politeness analysis tools to study the emotional environment within collaborative software development. 
-However, most papers that use these tools rarely establish their reliability.
-In this paper, we evaluate popular existing tools for sentiment and politeness detection over a dataset of 589 manually rated GitHub comments. 
-We also develop a coding scheme on how to quantify politeness for conversational texts found in the collaborative platforms. 
-We find that not only do the tools have a low agreement with the human rating on sentiment and politeness, human raters also have a low agreement among themselves. 
+However, papers that use these tools rarely establish their reliability.
+In this paper, we evaluate popular existing tools for sentiment and politeness detection over a dataset of 589 manually rated GitHub comments that represent developer discussions. 
+We also develop a coding scheme on how to quantify politeness for conversational texts found on collaborative platforms. 
+We find that not only do the tools have a low agreement with human ratings on sentiment and politeness, human raters also have a low agreement among themselves. 
 \end{abstract}
 
 %
