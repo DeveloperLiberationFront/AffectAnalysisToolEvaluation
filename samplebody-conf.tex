@@ -235,21 +235,47 @@ As mentioned in section \ref{data}, after the first iteration of rating, the Cod
 \subsection{Tool Selection}
 Sentiment analysis is an active field of research in the past decade and also possesses commercial interest. Hence there are a lot of tools available which rate a text based on its emotional polarity. Jongeling and colleagues point out four tools as the most commonly used for sentiment analysis across all the domains including software engineering research (SentiStrength, NLTK, Alchemy, Stanford NLP). We also take another tool from a recent paper, Senti4SD~\cite{calefato2017sentiment}, into consideration as it is claimed to be "specifically trained to support sentiment analysis in developers' communication channels". We select these 5 tools as popular sentiment analysis tools.
 \newline
-\indent \textbf{SentiStrength:} We use the version 2.3.6367.10661 of SentiStrength developed by Thelwall and colleagues~\cite{thelwall2010sentiment}. The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards} in recent studies. SentiStrength assigns an integer value between 1 to 5 for positive sentiment and -1 to -5 for negative sentiment. We add both the rating for a text, and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero and "neutral" otherwise. This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
+\indent \textbf{SentiStrength:} Thelwall and colleagues' SentiStrength~\cite{thelwall2010sentiment} 
+was developed based on MySpace comments and 
+has a ``word strength list'' at the core of its algorithm. 
+The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards} in recent studies. SentiStrength assigns an integer value between 1 to 5 for positive sentiment and -1 to -5 for negative sentiment. We add both the rating for a text, and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero and "neutral" otherwise. This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
 \newline
-\indent\textbf{Alchemy:} Alchemy provides a text-processing API which returns a label for sentiment (positive/neutral/negative) for each text with score between -1 to +1 with 0 being neutral, +1 being most positive and -1 being most negative. We only the label into account.
+\indent\textbf{Alchemy:} IBM's Alchemy 
+provides a text-processing API which returns a label for sentiment (positive/neutral/negative) for each text with score between -1 to +1 with 0 being neutral, +1 being most positive and -1 being most negative. We only the label into account.
 \newline
-\indent\textbf{NLTK:} NLTK~\cite{bird2009natural} has also been used in previous works in the Software engineering domain~\cite{pletea2014security,rousinopoulos2014sentiment}. We use an API provided in \href{www.text-processing.com}{www.text-processing.com} to get the sentiment analysis. For each text, it returns a label (positive/neutral/negative) with a score between 0 to 1 for each of the 3 categories with 1 being its highest intensity towards positive. We only take the label into account here too.
+\indent\textbf{NLTK:} Bird and colleagues' NLTK~\cite{bird2009natural}, 
+which uses multiple corpora in its development, 
+has also been used in previous works 
+in the Software engineering domain~\cite{pletea2014security,rousinopoulos2014sentiment}. 
+We use an API provided in \href{www.text-processing.com}{www.text-processing.com} to get the sentiment analysis. For each text, it returns a label (positive/neutral/negative) with a score between 0 to 1 for each of the 3 categories with 1 being its highest intensity towards positive. We only take the label into account here too.
 \newline
-\indent\textbf{Stanford NLP:} Stanford NLP divides the text into sentences, and performs a more advanced grammatical evaluation on each sentence by generating sentiment treebank through Recursive Neural Tensor Network~\cite{socher2013recursive}. It returns an integer score for each sentence (0 for neutral, 1 for positive, -1 for negative) indicating its sentiment label. We rate a text under "positive" or "negative" based on the category that has greater number of sentences and "neutral" otherwise. This approach is similar to that of SentiStrength.
+\indent\textbf{Stanford NLP:} Socher and colleagues' Stanford NLP 
+divides the text into sentences, 
+and performs a more advanced grammatical evaluation 
+on each sentence 
+by generating sentiment treebank 
+through Recursive Neural Tensor Network~\cite{socher2013recursive}.
+It was trained on movie review excerpts 
+from the rottentomatoes.com website. 
+It returns an integer score for each sentence (0 for neutral, 1 for positive, -1 for negative) indicating its sentiment label. We rate a text under "positive" or "negative" based on the category that has greater number of sentences and "neutral" otherwise. This approach is similar to that of SentiStrength.
 \newline
-\indent\textbf{Senti4SD:} This tool is a result of a recent paper~\cite{calefato2017sentiment} which also classifies each text by labeling their sentiment as positive, negative or neutral. The tool was built
-from scratch using questions, answers and comments from StackOverflow as its training data. Hence it has the claim to be of closer relevance to Software Engineering domain.
+\indent\textbf{Senti4SD:} This tool, 
+developed by Calefato and colleagues~\cite{calefato2017sentiment}, classifies each text by labeling their sentiment 
+as positive, negative or neutral 
+The tool was built
+from scratch using 
+questions, answers and comments 
+from StackOverflow as its training data. 
+Hence it has the claim to be of closer relevance to Software Engineering domain.
 \newline
 \newline
-For politeness analysis, we use a tool developed by Danescu-Niculescu-Mizil and his colleagues~\cite{danescu2013computational}. Ortu and colleagues have used this tool in software engineering research over a dataset where they collected data from the Apache Software Foundation Issue Tracking system, the JIRA repository~\cite{ortu2015would,ortu2015bullies}. They also show that sentiment and politeness are independent metrics having a weak correlation between them in one of their studies~\cite{ortu2015bullies}. As the tool does not have any distinct name, we will simply call it "Politeness tool". 
+For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. Ortu and colleagues have used this tool in software engineering research over a dataset where they collected data from the Apache Software Foundation Issue Tracking system, the JIRA repository~\cite{ortu2015would,ortu2015bullies}. They also show that sentiment and politeness are independent metrics having a weak correlation between them in one of their studies~\cite{ortu2015bullies}. As the tool does not have any distinct name, we will simply call it "Politeness tool". 
 
-\textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on "domain-independent lexical and syntactic features operationalizing key components of politeness theory, such as indirection, deference, impersonalization and modality". It was trained and tested on different corpora and hence has the claim to be domain independent. It returns a politeness score between 0 to 1 for each texts with 1 being the most polite.  
+\textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on "domain-independent lexical and syntactic features operationalizing key components of politeness theory, such as indirection, deference, impersonalization and modality". 
+It was trained and tested 
+on different corpora (Wikipedia and Stack Exchange) 
+and hence has the claim to be domain independent. 
+It returns a politeness score between 0 to 1 for each texts with 1 being the most polite.  
 
  
 \section{Results}
