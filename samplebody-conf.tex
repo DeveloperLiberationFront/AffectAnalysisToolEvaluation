@@ -207,7 +207,10 @@ After the first iteration, where everybody separately annotated the texts, Coder
 \subsection{Sentiment Annotation Scheme}\label{sentscheme}
 
 
-As mentioned in section \ref{rwsent}, previous works have used different or no coding schemes while doing sentiment rating in software engineering domain. To not deviate a lot from the previous works, but still giving our coders a basic set of strategies, we make use of the simple annotation scheme developed by Mohammad~\cite{mohammad2016practical}\footnote{https://tinyurl.com/y7pzb6jy}. Based on this scheme, the raters were asked to label each comment as either positive, negative, neutral, mixed or sarcasm. The "mixed" here stands for a text containing both types of emotions. Our tools label texts as "neutral" where opposite emotions counter each other. From that perspective, we eventually classified the texts as "neutral" which were given a "mixed" rating by the human raters. We omitted the texts rated "sarcasm" by the human raters from our test data as there is no clear guideline on how to match its label with the possible ratings the tools have as output. 
+As mentioned in section \ref{rwsent}, previous works have used different or no coding schemes while doing sentiment rating in software engineering domain. To not deviate a lot from the previous works, but still giving our coders a basic set of strategies, 
+\textit{we make use of the simple annotation scheme 
+from a prior work developed by Mohammad}~\cite{mohammad2016practical}\footnote{https://tinyurl.com/y7pzb6jy}. 
+Based on this scheme, the raters were asked to label each comment as either positive, negative, neutral, mixed or sarcasm. The "mixed" here stands for a text containing both types of emotions. Our tools label texts as "neutral" where opposite emotions counter each other. From that perspective, we eventually classified the texts as "neutral" which were given a "mixed" rating by the human raters. We omitted the texts rated "sarcasm" by the human raters from our test data as there is no clear guideline on how to match its label with the possible ratings the tools have as output. 
 
 \subsection{Politeness Annotation Scheme}\label{polscheme}
 
@@ -241,7 +244,15 @@ We could not find any commonly used politeness scheme to rate textual documents.
 	%\footnotetext{Excluded in the modified scheme after the experiment}
 \end{table}
 
-However, this being an experimental coding scheme, the raters were given the web page of the project containing the comment and were encouraged to dive into the detail of the context of the whole conversation and use their own judgment while rating. Additionally, they were asked to give remarks if they found any criteria that are not covered by the scheme or that do not align with the real situation. The major criteria of our initial coding scheme are shown in Table~\ref{poltable}, along with examples. Based on this scheme, the raters were asked to rate each text on an integer scale of -2 to +2 with -2 being most impolite, 0 being neutral and +2 being most polite.  
+However, this being an experimental coding scheme, the raters were given the web page of the project containing the comment and were encouraged to dive into the detail of the context of the whole conversation and use their own judgment while rating. Additionally, they were asked to give remarks if they found any criteria that are not covered by the scheme or that do not align with the real situation. The major criteria of our initial coding scheme are shown in Table~\ref{poltable}, along with examples.
+Based on this scheme, 
+the coders were asked to rate each text as 
+very polite,polite,neutral,impolite, and very impolite.
+To measure the degree of politeness/impoliteness, 
+the coders were suggested to consider 
+the frequency of strategies used in the comment 
+according to the scheme 
+alongside their own judgment and the underlying context.
 
 As mentioned in section \ref{data}, after the first iteration of rating, the Coder 1 had a discussion with the other coders about judging criteria and reaching a conclusion about the disagreed comments. Upon the discussion, we also modify our coding scheme and propose a complete and final one which is presented in Section \ref{finalpolscheme}. From the discussion, the coders also agreed that the initial coding scheme was not very clear on how to distinguish between the degree of politeness/impoliteness, hence we got varying judgment about the degree. For the purpose of this study, we, therefore, merged "very polite" and "polite" into one single group of "polite" and "very impolite" and "impolite" into one group of "impolite".
 
@@ -302,7 +313,16 @@ We used both the initially agreed and final set of data to evaluate our tools fo
 
 As mentioned before, all of the 589 comments were annotated by the Coder 1, and two other coders annotated one half of the dataset each. Table \ref{interrater} shows the inter-rater agreement. We used Weighted Cohen's Kappa because our classes in both of the ratings have an implicit ordering. When two coders labeled different polarity for their ratings (positive vs negative and polite vs impolite), we counted it as a strong disagreement (weight=2). And when one of the labels was neutral, and other was a polar one, we counted it as a weak disagreement (weight=1).
 
-Coder 1 had a fair and moderate agreement with one of the coders (Coder 2) for sentiment and politeness respectively and fair with the other coder (Coder 3) in both the ratings (according to magnitude guidelines presented by Landis and Koch~\cite{landis1977measurement}). This agreement rate is similar to what Murgia and colleagues found in their work for emotions like love, sadness, fear, and joy~\cite{murgia2014developers} and points towards the subjectivity of these affects. However, Coder 1's agreement on politeness is higher than sentiment with both the other coders. One reason behind this can be that the annotation scheme for politeness was more detailed with relevant examples. 
+Coder 1 had a fair and moderate agreement with one of the coders (Coder 2) for sentiment and politeness respectively and fair with the other coder (Coder 3) in both the ratings (according to magnitude guidelines presented by Landis and Koch~\cite{landis1977measurement}). This agreement rate is similar to what Murgia and colleagues found in their work for emotions like love, sadness, fear, and joy~\cite{murgia2014developers} and points towards the subjectivity of these affects.
+However, 
+Coder 1's agreement on politeness 
+is higher than sentiment 
+with both the other coders. 
+One reason behind this can be 
+that the annotation scheme for politeness 
+provided to the coders 
+was more detailed with relevant examples 
+than the scheme for sentiment. 
 
 \vspace{3mm}
 \noindent\fbox{%
