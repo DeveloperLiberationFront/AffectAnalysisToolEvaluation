@@ -335,7 +335,7 @@ than the scheme for sentiment.
 
 \begin{table}
 \centering
-\caption{Inter-rater Agreement}
+\caption{Inter-rater Agreement (Weighted Cohen's Kappa)}
   \label{interrater}
   \begin{tabular}{|c|c|l|}
     \toprule
@@ -376,7 +376,7 @@ The drop in the performance perhaps is not that surprising as we now added the c
 \hline
 \multicolumn{2}{|c|}{ } & \multicolumn{3}{c|}{ F-measure } \\
 \hline
-tools & $\kappa$ & neutral & positive & negative \\
+tools & Weighted $\kappa$ & neutral & positive & negative \\
 \hline
 SentiStrength & 0.44 & 74.58\% & 61.54\% & 40.68\% \\
 \hline
@@ -399,7 +399,7 @@ Senti4SD & 0.53 & 84.92\% & 68.18\% & 41.03\% \\
 \hline
 \multicolumn{2}{|c|}{ } & \multicolumn{3}{c|}{ F-measure } \\
 \hline
-tools & $\kappa$ & neutral & positive & negative \\
+tools & Weighted $\kappa$ & neutral & positive & negative \\
 \hline
 SentiStrength & 0.24 & 65.68\% & 43.01\% & 30.85\% \\
 \hline
@@ -442,7 +442,7 @@ We use our first agreed dataset of 374 comments for politeness rating to test th
 \hline
  & \multicolumn{2}{c|}{ F-measure } & & \multicolumn{2}{c|}{ F-measure } \\
  \hline
-$\kappa$ & polite & neutral & k & polite & neutral \\
+$\kappa$ & polite & neutral & $\kappa$ & polite & neutral \\
 \hline
 .49 & 67.15\% & 75.94\% & .39 & 60.24\% & 78.37\%\\
 \hline
