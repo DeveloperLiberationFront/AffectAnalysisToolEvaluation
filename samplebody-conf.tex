@@ -144,7 +144,22 @@ To get the comments, we use the GHTorrent project\footnote{http://ghtorrent.org/
 
 As manual annotation is a time-consuming task, we estimated 
 every hundred comment 
-would take one hour to complete by one person. For each comment, we would have two human coders to manually go through and annotate, as a previous study found that "having more than two raters does not change the agreement significantly"~\cite{murgia2014developers}. We made an estimation that annotation of 600 comments can be completed within reasonable time and effort. Adding 40 comments more as a cautionary step, we randomly picked 640 comments from the data we gathered.
+would take one hour to complete by one person. For each comment, we would have two human coders to manually go through and annotate, as a previous study found that "having more than two raters does not change the agreement significantly"~\cite{murgia2014developers}. We made an estimation that annotation of 600 comments can be completed within reasonable time and effort.
+Adding 40 comments more as a cautionary step, 
+we randomly picked 640 comments 
+from all the public projects of our data.
+We randomly picked 
+20 comments out of these 640 and 
+manually investigated their origins.
+All the 20 comments came from 20 different projects 
+and the projects represent valid software development.
+18 out of these 20 projects have clear description 
+about the project in its README file.
+Out of these 20 projects, 
+4 projects had only 1 contributor, 
+3 projects had 2 contributors, 
+and 1 project had 4 contributors.
+Rest of the 12 projects had more than 15 contributors.
 
 During pre-inspection, we had to remove 51 comments as they were either incomplete fragments, duplicates, code snippets without commentary, non-English statements, or parts of discussions that are no longer available (due to, for example, invalid URLs). The rationale behind the last factor is that if the coder wants to see the whole discussion of which a comment is a part of to have an understanding of the underlying context, he wouldn't be able to do so as the link is broken. We provide the final 589 comments to the human coders removing only the HTML tags. However, before feeding these comments to the tools, we also remove the code snippets and URLs, as they would get incorrectly processed by the tool wrongly considering them as English texts and hence biasing the result. The raters were also provided with the URL of the page containing the comment.
 
