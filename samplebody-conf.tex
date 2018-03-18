@@ -162,6 +162,19 @@ and 1 project had 4 contributors.
 Rest of the 12 projects had more than 15 contributors.
 
 During pre-inspection, we had to remove 51 comments as they were either incomplete fragments, duplicates, code snippets without commentary, non-English statements, or parts of discussions that are no longer available (due to, for example, invalid URLs). The rationale behind the last factor is that if the coder wants to see the whole discussion of which a comment is a part of to have an understanding of the underlying context, he wouldn't be able to do so as the link is broken. We provide the final 589 comments to the human coders removing only the HTML tags. However, before feeding these comments to the tools, we also remove the code snippets and URLs, as they would get incorrectly processed by the tool wrongly considering them as English texts and hence biasing the result. The raters were also provided with the URL of the page containing the comment.
+Also, while we kept emoticons in the comments, 
+we had to strip out the emojis 
+before providing the comments 
+to the human coders and the tool.
+The emojis in the GitHub comments 
+are stored images 
+that get fetched from a central hosting location.
+While we could replace the emojis 
+by their titles using the images' HTML tags, 
+the tools would have been unable to detect them 
+as they are not trained in this way.
+So we removed all the emojis 
+from the comments in our test data.
 
 While the first coder (Coder 1) rated all the comments, we had two other coders who went through half of the data set each individually. All the coders were graduate and undergraduate students 
 of the Computer Science department. 
