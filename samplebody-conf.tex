@@ -293,13 +293,20 @@ from StackOverflow as its training data.
 Hence it has the claim to be of closer relevance to Software Engineering domain.
 \newline
 \newline
-For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. Ortu and colleagues have used this tool in software engineering research over a dataset where they collected data from the Apache Software Foundation Issue Tracking system, the JIRA repository~\cite{ortu2015would,ortu2015bullies}. They also show that sentiment and politeness are independent metrics having a weak correlation between them in one of their studies~\cite{ortu2015bullies}. As the tool does not have any distinct name, we will simply call it "Politeness tool". 
+For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. 
+While the tool was trained on short texts 
+that represent requests/questions, 
+the tool identifies general patterns of politeness 
+in written texts and 
+has been used in recent software engineering studies.
+Ortu and colleagues have used this tool in software engineering research over a dataset where they collected data from the Apache Software Foundation Issue Tracking system, the JIRA repository~\cite{ortu2015would,ortu2015bullies}. They also show that sentiment and politeness are independent metrics having a weak correlation between them in one of their studies~\cite{ortu2015bullies}. As the tool does not have any distinct name, we will simply call it "Politeness tool". 
 
 \textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on "domain-independent lexical and syntactic features operationalizing key components of politeness theory, such as indirection, deference, impersonalization and modality". 
 It was trained and tested 
 on different corpora (Wikipedia and Stack Exchange) 
 and hence has the claim to be domain independent. 
-It returns a politeness score between 0 to 1 for each texts with 1 being the most polite.  
+The tool ``predicts a politeness score between 0 to 1'' 
+for each text.   
 
  
 \section{Results}
