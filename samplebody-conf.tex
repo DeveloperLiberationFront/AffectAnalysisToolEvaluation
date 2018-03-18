@@ -476,7 +476,16 @@ Other sentiment analysis tools did not exactly have the same points of differenc
 For the politeness tool, there are a lot of samples which went marginally wrong judging by the score that the tool provided for them. The tool also might not have enough weight for some positive lexicons and emoticons, the use of which human raters often found as polite. Similar to Senti4SD, this tool also has problems with very short texts. The failure for impolite comments is because impoliteness is much more subtle within the context. Also, even for some explicit syntactic features, like direct orders (e.g. "Do not add","see above","replace") came out as neutral by the tool. However, having distinct cases of failures for these tools indicate that an extensive training would help us to get better output from the tools.
 
 \section{Threats to Validity}
-One major threat of our study is that we only had two human coders per each comment to annotate. Given by the subjectivity of such analysis, if we had more coders for each text, we might have found more consistency in human rating. Besides this, Danescu-Niculescu-Mizil and his colleagues for their politeness tool used Brown \& Levinson's theory to extract features of politeness out of the data that were manually rated. Our coding scheme is also based on the same politeness theory. This biases our annotation of the comments towards the tool's internal working. If we had a different or no coding scheme during the rating, the performance of the politeness with respect to the human rating could have come out worse. 
+One major threat of our study is 
+that we only had two human coders per each comment 
+to annotate. 
+Given by the subjectivity of such analysis, 
+more coders could ensure more reliable human evaluation.
+Also, we had one coder rating all the comments 
+and two other rating half of the data set each.
+This creates a possibility of human bias 
+in our manual rating. 
+Besides this, Danescu-Niculescu-Mizil and his colleagues for their politeness tool used Brown \& Levinson's theory to extract features of politeness out of the data that were manually rated. Our coding scheme is also based on the same politeness theory. This biases our annotation of the comments towards the tool's internal working. If we had a different or no coding scheme during the rating, the performance of the politeness with respect to the human rating could have come out worse. 
 Also, 
 we removed the URLs 
 before feeding the comments to the tool 
