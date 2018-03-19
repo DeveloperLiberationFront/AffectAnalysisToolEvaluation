@@ -37,8 +37,8 @@ While analyzing sentiment is the most commonly used technique to measure emotion
 researchers have also used natural language tools to measure 
 politeness~\cite{ortu2015bullies}, which is an important 
 factor in the on-boarding process~\cite{steinmacher2015social}.
-Thus, in this paper, we focus on sentiment analysis and 
-politeness tools. 
+Thus, in this paper, we focus on sentiment and 
+politeness  analysis tools. 
 
 % maybe ~\cite{montoyo2012subjectivity} somehow? no need
 Despite the use of automated tools for analyzing sentiment and 
@@ -70,7 +70,7 @@ The major contributions of this paper are:
     tools and one politeness tool.
 \end{enumerate}
 
-The dataset, coding schemes and other associated files have been made publicly available at \href{https://tinyurl.com/yabncd7b}{https://tinyurl.com/yabncd7b}.
+The dataset, coding schemes, and other associated files have been made publicly available at \href{https://tinyurl.com/yabncd7b}{https://tinyurl.com/yabncd7b}.
 %todo make the repo public
 
 
@@ -124,11 +124,11 @@ and found that,
 Many researchers are planning to study 
 the emotional awareness in collaborative software engineering~\cite{dewan2015towards}. 
 However, challenges lie in correctly identifying any type of affect before we can use the data for further analysis. 
-In a recent work, Murgia explores the possibilities of correctly judging emotions from texts extracted from software engineering platforms~\cite{murgia2014developers}. 
-He found 
+A recent work explores the possibilities of correctly judging emotions from texts extracted from software engineering platforms~\cite{murgia2014developers}. 
+The authors found 
 poor to moderate agreements between human raters 
 on the different type of emotions. 
-He concludes that 
+They conclude that 
 "more investigation is needed before 
 building a fully automatic emotion mining tool". 
 Besides, Novielli and colleagues point towards 
@@ -149,7 +149,7 @@ Just as Jongeling and colleagues
 evaluated the reliability of four sentiment analysis tools, 
 we also perform a similar evaluation 
 over a new dataset of GitHub comments 
-with addition of tools 
+with an addition of two tools 
 that are specifically built for the software engineering domain. Moreover, we also extend our evaluation 
 towards the reliability of politeness analysis 
 on GitHub comments.  
@@ -161,10 +161,10 @@ Our goal is to evaluate the reliability of sentiment and politeness analysis too
 These discussions between developers can be thought of as the gateway to understand the emotional environment of a project, and how developers get along with each other. 
 Before we evaluate the reliability of tools for doing affect analysis,
 we first need to define our gold standard for evaluation.
-Like other works~\cite{calefato2017sentiment,ahmed2017senticr}, we use human raters to create
+Like other works~\cite{calefato2017sentiment,ahmed2017senticr}, we use human coders to create
 this gold standard.
 However, before taking human ratings at face value, we first ask
-to what extent human raters agree with each other:
+to what extent human coders agree with each other:
 
 \begin{itemize}
 
@@ -221,7 +221,7 @@ This way, we can also get the HTML tags.
 
 As manual annotation is a time-consuming task, 
 we estimated 
-every hundred comment 
+every hundred comments 
 would take one hour to complete by one person. 
 For each comment, 
 we would have two human coders to 
@@ -243,12 +243,12 @@ and manually investigated their origins.
 All the 20 comments came from 20 different projects 
 and the projects represent valid software development.
 18 out of these 20 projects have a clear description 
-of the project in their README file.
+of the project in their README files.
 Out of these 20 projects, 
 4 projects had only 1 contributor, 
 3 projects had 2 contributors, 
 and 1 project had 4 contributors.
-Rest of the 12 projects had more than 15 contributors.
+Rest of the 12 projects had more than 15 contributors at least.
 
 During pre-inspection, 
 we had to remove 51 comments as they were 
