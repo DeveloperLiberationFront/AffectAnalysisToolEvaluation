@@ -57,7 +57,7 @@ tools to reach conclusions confidently.
 In this paper, we study the reliability of popular sentiment analysis 
 and politeness tools in the context of developer discussions.
 To do so, we randomly chose 589 comments from pull requests and issues on GitHub,
-manually annotated them for sentiment and politeness using human raters,
+manually annotated them for sentiment and politeness using human coders,
 and compared those annotations against the results produced by the tools. 
 
 The major contributions of this paper are:
@@ -143,7 +143,9 @@ and that previously published results cannot be replicated
 when different sentiment analysis tools are used.'' 
 Another work also used existing tools 
 on code review comments from Gerrit 
-and found a poor performance by the tools~\cite{ahmed2017senticr}. This establishes that reliability of a tool needs to be proven first, before the result of the tool can be used in any further analysis.
+and found a poor performance by the tools~\cite{ahmed2017senticr}. 
+We find similar results also in Lin and colleagues' work~\cite{lin2018sentiment}.
+This establishes that reliability of a tool needs to be proven first, before the result of the tool can be used in any further analysis.
 
 Just as Jongeling and colleagues 
 evaluated the reliability of four sentiment analysis tools, 
@@ -276,7 +278,7 @@ containing the comment.
 Also, while we kept emoticons in the comments, 
 we had to strip out the emojis 
 before providing the comments 
-to the human coders and the tool.
+to the human coders and the tools.
 The emojis in the GitHub comments 
 are stored images 
 that get fetched from a central hosting location.
@@ -408,7 +410,7 @@ The major criteria of our initial coding scheme
 are shown in Table~\ref{poltable}, along with examples.
 Based on this scheme, 
 the coders were asked to rate each text as 
-very polite,polite,neutral,impolite, and very impolite.
+very polite, polite, neutral, impolite, and very impolite.
 To measure the degree of politeness/impoliteness, 
 the coders were suggested to consider 
 the frequency of strategies used in the comment 
@@ -590,7 +592,7 @@ we counted it as a weak disagreement (weight=1).
 Coder 1 had a fair and moderate agreement 
 with one of the coders (Coder 2) 
 for sentiment and politeness respectively and 
-fair with the other coder (Coder 3) in both the ratings 
+fair with the other coder (Coder 3) for both the ratings 
 (according to magnitude guidelines presented by Landis and Koch~\cite{landis1977measurement}). 
 This agreement rate is similar to what 
 Murgia and colleagues found in their work 
@@ -852,7 +854,7 @@ Although we did not use this final modified scheme in our work,
 we hope that this scheme will come useful in future works 
 and help in maintaining a clear set of standards 
 in rating politeness for texts found in online conversations. 
-The scheme is also publicly available at \href{https://tinyurl.com/y8g3b8zn}{https://tinyurl.com/y8g3b8zn}
+The scheme is also publicly available at \href{https://tinyurl.com/y8g3b8zn}{https://tinyurl.com/y8g3b8zn}.
 
 \subsection{Insights on Sentiment Coding}\label{sentschemedis}
 The main confusion 
@@ -868,10 +870,10 @@ as these comments mark positive results.
 However, the other coder rated the same texts as neutral 
 unless they are explicitly emotive. 
 Similar confusion arose with bug reports or crash reports. 
-Upon discussion, the raters agreed that 
+Upon discussion, the coders agreed that 
 these texts are samples of normal day-to-day technical details 
 in a software project. 
-The raters reached a consensus 
+The coders reached a consensus 
 that if a text doesn't explicitly show an emotion, 
 we would rate it as neutral. 
 %The initially disagreed comments were resolved on such conclusions. 
@@ -921,7 +923,7 @@ with proper lexicon weights.
 The failure for impolite comments is because 
 impoliteness is much more subtle within the context. 
 Also, even for some explicit syntactic features, 
-like direct orders (e.g. "Do not add","see above","replace") 
+like direct orders (e.g. "Do not add", "see above", "replace") 
 came out as neutral by the tool. 
 However, having distinct cases of failures for these tools 
 indicate that an extensive training might help to improve.
@@ -953,9 +955,9 @@ before feeding the comments to the tool
 but 
 not from the comments provided to the coders 
 which creates a difference between the inputs.
-However, 
-the human coders did not take the URLs into account 
-as they are not commentary texts.
+%However, 
+%the human coders did not take the URLs into account 
+%as they are not commentary texts.
 Finally, while we randomly picked 589 comments, they might not be representative of the whole GitHub community.
 
 \section{Conclusion}
@@ -964,14 +966,14 @@ is a fertile ground for research.
 However, we find that 
 not only the popular existing tools are unreliable,
 even humans too are inconsistent  
-in identifying overall sentiment and politeness 
+in identifying sentiment and politeness 
 in developer discussions.
 This demonstrates the need for 
 standardized coding schemes 
 for the human coders
 in order to build an oracle
 and then perform customized training 
-for the tools
+on the tools
 to perform reliable affect analysis
 in the software engineering domain. 
 
