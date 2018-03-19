@@ -29,8 +29,10 @@ developers communicate with each other to maintain their projects~\cite{storey20
 When developers use these sites, 
 researchers can analyze the detailed history of project development, 
 as well as developers' communication about the project in the form of issues, for example. 
-These textual artifacts present the opportunity to use natural language 
-processing tools to do different affect analyses for different purposes~\cite{ortu2015bullies}. 
+These textual artifacts present the opportunity 
+to use natural language processing tools 
+to do different affect analyses 
+for different purposes~\cite{ortu2015bullies,ebert2017confusion,gachechiladze2017anger}. 
 While analyzing sentiment is the most commonly used technique to measure emotions, 
 researchers have also used natural language tools to measure 
 politeness~\cite{ortu2015bullies}, which is an important 
@@ -274,7 +276,7 @@ Therefore, we take two other tools that have been trained on a dataset relevant 
 \indent \textbf{SentiStrength:} Thelwall and colleagues' SentiStrength~\cite{thelwall2010sentiment} 
 was developed based on MySpace comments and 
 has a ``word strength list'' at the core of its algorithm. 
-The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards} in recent studies. SentiStrength assigns an integer value between 1 to 5 for positive sentiment and -1 to -5 for negative sentiment. We add both the rating for a text, and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero and "neutral" otherwise. This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
+The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards,sinha2016analyzing} in recent studies. SentiStrength assigns an integer value between 1 to 5 for positive sentiment and -1 to -5 for negative sentiment. We add both the rating for a text, and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero and "neutral" otherwise. This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
 \newline
 \indent\textbf{Alchemy:} IBM's Alchemy 
 provides a text-processing API which returns a label for sentiment (positive/neutral/negative) for each text with score between -1 to +1 with 0 being neutral, +1 being most positive and -1 being most negative. We only the label into account.
