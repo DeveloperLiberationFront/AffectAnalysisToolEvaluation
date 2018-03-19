@@ -66,7 +66,7 @@ The major contributions of this paper are:
     hand-rated by humans for sentiment and politeness\footnote{https://tinyurl.com/y7udzyf3}, 
     \item An annotation scheme that can be used to rate 
     the politeness of comments in discussions, and
-    \item A reliability evaluation of five sentiment analysis 
+    \item A reliability evaluation of six sentiment analysis 
     tools and one politeness tool.
 \end{enumerate}
 
@@ -257,7 +257,19 @@ alongside their own judgment and the underlying context.
 As mentioned in section \ref{data}, after the first iteration of rating, the Coder 1 had a discussion with the other coders about judging criteria and reaching a conclusion about the disagreed comments. Upon the discussion, we also modify our coding scheme and propose a complete and final one which is presented in Section \ref{finalpolscheme}. From the discussion, the coders also agreed that the initial coding scheme was not very clear on how to distinguish between the degree of politeness/impoliteness, hence we got varying judgment about the degree. For the purpose of this study, we, therefore, merged "very polite" and "polite" into one single group of "polite" and "very impolite" and "impolite" into one group of "impolite".
 
 \subsection{Tool Selection}
-Sentiment analysis is an active field of research in the past decade and also possesses commercial interest. Hence there are a lot of tools available which rate a text based on its emotional polarity. Jongeling and colleagues point out four tools as the most commonly used for sentiment analysis across all the domains including software engineering research (SentiStrength, NLTK, Alchemy, Stanford NLP). We also take another tool from a recent paper, Senti4SD~\cite{calefato2017sentiment}, into consideration as it is claimed to be "specifically trained to support sentiment analysis in developers' communication channels". We select these 5 tools as popular sentiment analysis tools.
+Sentiment analysis is an active field of research 
+in the past decade 
+and also possesses commercial interest. 
+Hence there are a lot of tools available 
+which rate a text based on its emotional polarity. 
+Jongeling and colleagues point out four tools 
+as the most commonly used for sentiment analysis 
+across all the domains 
+including software engineering research 
+(SentiStrength, NLTK, Alchemy, Stanford NLP).
+These tools, however, are trained on corpora that are not related to software engineering.
+Therefore, we take two other tools that have been trained on a dataset relevant to developer discussions (Senit4SD, SentiCR). 
+% We also take another tool from a recent paper, Senti4SD~\cite{calefato2017sentiment}, into consideration as it is claimed to be "specifically trained to support sentiment analysis in developers' communication channels". We select these 5 tools as popular sentiment analysis tools.
 \newline
 \indent \textbf{SentiStrength:} Thelwall and colleagues' SentiStrength~\cite{thelwall2010sentiment} 
 was developed based on MySpace comments and 
@@ -291,6 +303,15 @@ from scratch using
 questions, answers and comments 
 from StackOverflow as its training data. 
 Hence it has the claim to be of closer relevance to Software Engineering domain.
+\newline
+\indent \textbf{SentiCR:} Ahmed and colleagues' SentiCR~\cite{ahmed2017senticr} 
+is trained on a dataset 
+that comprises of 
+code review comments from Gerrit and 
+two other datasets developed 
+in prior works~\cite{calefato2017sentiment,murgia2014developers} using supervised learning techniques. 
+Based on the oracle, 
+the tool also return positive, neutral and negative.
 \newline
 \newline
 For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. 
@@ -363,7 +384,11 @@ The initially agreed dataset contained 66 positives, 20 negatives, 198 neutral a
 For the first set of agreed data in Table \ref{sentfirst}, Senti4SD turned out to have the best performance among the tools with a  moderate agreement rate, .53. One point to note from the result is the relatively low F-measures with a low recall of negative comments for all the tools including Senti4SD compared to neutral and positive comments. This confirms the "negative bias" of the existing tools, that is the misclassification of neutral
 technical texts as emotionally negative~\cite{blaz2016sentiment,novielli2015challenges,calefato2017sentiment}.
 
-In Table \ref{sentfinal}, we show the results when we compare the tools with the final dataset that also includes the initially disagreed comments. In this step, we see a major drop in the performance of all the tools and a similar pattern of negative comments still doing worse.
+In Table \ref{sentfinal}, we show the results when we compare the tools with the final dataset that also includes the initially disagreed comments. In this step, 
+we see a major drop in the performance 
+of all the tools 
+except SentiCR
+and a similar pattern of negative comments still doing worse.
 
 The drop in the performance perhaps is not that surprising as we now added the comments that the human raters initially disagreed on between them. It indicates that these comments are harder to measure and there remain subtle aspects of subjectivity in these comments. However, the tools' performance over the final and full dataset tells us about the overall unreliability of these tools.
 
@@ -395,6 +420,8 @@ Stanford NLP & 0.26 & 55.85\% & 59.83\% & 19.44\% \\
 \hline
 Senti4SD & 0.53 & 84.92\% & 68.18\% & 41.03\% \\
 \hline
+SentiCR & 0.13 & 57.04\% & 29.70\% & 29.91\% \\
+\hline
 \end{tabular}
 \end{table}
 
@@ -417,6 +444,8 @@ Alchemy & 0.23 & 51.56\% & 41.67\% & 34.48\% \\
 Stanford NLP & 0.16 & 43.05\% & 45.09\% & 26.41\% \\
 \hline
 Senti4SD & 0.33 & 79.04\% & 50.47\% &  31.25\% \\
+\hline
+SentiCR & 0.24 & 64.87\% & 43.48\% & 31.02\% \\
 \hline
 \end{tabular}
 \end{table}
