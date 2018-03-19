@@ -79,25 +79,80 @@ The dataset, coding schemes and other associated files have been made publicly a
 %-- why is github an important domain to look at
 \subsection{Sentiment Analysis in Software Engineering}\label{rwsent}
 
-Sentiment analysis focuses on the application of classifying texts as to their polarity (positive, negative or neutral)~\cite{pang2008opinion}, a technique that researchers have applied to software engineering data. Using data from GitHub, Guzman and colleagues applied sentiment analysis to study commit comments~\cite{guzman2014sentiment}, while Pletea and colleagues tried to find a correlation between security-related discussions and fluctuating sentiments~\cite{pletea2014security}. Other platforms, including the Gentoo community and Stack Overflow, have also been studied to understand the role of developers' sentiments in the process of software engineering~\cite{garcia2013role,islam2016towards,guzman2013towards,novielli2014towards}.
+Sentiment analysis focuses on the application of 
+classifying texts as to their polarity 
+(positive, negative or neutral)~\cite{pang2008opinion}. 
+Using data from GitHub, 
+Guzman and colleagues applied sentiment analysis 
+to study commit comments~\cite{guzman2014sentiment}, 
+while Pletea and colleagues tried to find a correlation between security-related discussions and fluctuating sentiments~\cite{pletea2014security}. 
+Other platforms, 
+including the Gentoo community and Stack Overflow, 
+have also been studied to understand the role of developers' sentiments in the process of software engineering~\cite{garcia2013role,islam2016towards,guzman2013towards,novielli2014towards}.
 
-While most of these works have used the existing tools that are common in other domains, research on specialized tools for software engineering domain is ongoing. These tools try to overcome the problems of the common sentiment analysis tools that were trained on texts from unrelated domains by having their own sentiment oracle for the software engineering domain consisting of Stack Overflow posts or Gerrit code review comments~\cite{ahmed2017senticr,calefato2017sentiment}. However, they have used different or no coding schemes while annotating the texts by human raters, which might lead them to have subtle differences in their understanding of sentiment in the software engineering domain.
+While most of these works have used 
+the popular common tools, 
+research on specialized tools for software engineering domain 
+is ongoing. 
+Customized tools try to overcome the problems 
+of the prior common tools 
+that were trained on texts 
+from unrelated domains 
+by having their own sentiment oracle 
+for the software engineering domain~\cite{ahmed2017senticr,calefato2017sentiment}. 
+However, they have used different or no coding schemes 
+while annotating the texts by human raters, 
+which might lead them to have subtle differences in their understanding of sentiment in this domain.
 
 \subsection{Politeness Analysis in Software Engineering}
 
-Politeness can be described as "the practical application of good manners or etiquette"~\cite{wiki:pol}. Politeness in manner and conversation is a strong factor in social collaborations~\cite{ortu2015would,wang2008politeness}. Research is also going on in the software engineering domain to study the impact of politeness expressed by the developers. For example, Ortu and colleagues concluded that "the more polite developers were, the less time it took to fix an issue", while Tsay and colleagues studied GitHub discussions and found that, "the level of a submitter's prior interaction on a project changed how politely developers discussed the contribution and the nature of proposed alternative solutions"~\cite{ortu2015would,tsay2014let}. However, similar to sentiment analysis, different studies had different methods to rate politeness~\cite{tsay2014let,brownsoftware}.
+Politeness can be described as 
+"the practical application of good manners or etiquette"~\cite{wiki:pol}. 
+Politeness is a strong factor in social collaborations~\cite{ortu2015would,wang2008politeness}. 
+Research is also going on in the software engineering domain 
+to study the impact of politeness expressed by the developers. 
+For example, Ortu and colleagues concluded that 
+"the more polite developers were, 
+the less time it took to fix an issue", 
+while Tsay and colleagues studied GitHub discussions 
+and found that, 
+"the level of a submitter's prior interaction on a project changed how politely developers discussed the contribution and the nature of proposed alternative solutions"~\cite{ortu2015would,tsay2014let}. However, similar to sentiment analysis, different studies had different methods to rate politeness~\cite{tsay2014let,brownsoftware}.
 
 
 \subsection{Challenges for Sentiment \& Politeness Analysis in Software Engineering}
 
-Many researchers are planning to study the emotional awareness in collaborative software engineering~\cite{dewan2015towards}. However, challenges lie in correctly identifying any type of affect before we can use the data for further analysis. In a recent work, Murgia explores the possibilities of correctly judging emotions from texts extracted from software engineering platforms~\cite{murgia2014developers}. He found poor to moderate agreements between human raters on the different type of emotions and when more contextual details are provided, human raters sometimes struggle to interpret emotions rather than being more confident about it. He concludes that "more investigation is needed before building a fully automatic emotion mining tool". Novielli and colleagues also explore this difficulty, pointing towards the domain dependency of existing tools which makes it harder to apply them in new corpora~\cite{novielli2015challenges}. 
+Many researchers are planning to study 
+the emotional awareness in collaborative software engineering~\cite{dewan2015towards}. 
+However, challenges lie in correctly identifying any type of affect before we can use the data for further analysis. 
+In a recent work, Murgia explores the possibilities of correctly judging emotions from texts extracted from software engineering platforms~\cite{murgia2014developers}. 
+He found 
+poor to moderate agreements between human raters 
+on the different type of emotions. 
+He concludes that 
+"more investigation is needed before 
+building a fully automatic emotion mining tool". 
+Besides, Novielli and colleagues point towards 
+the domain dependency of existing tools 
+which makes it harder to apply them in new corpora~\cite{novielli2015challenges}. 
 
-Jongeling and his colleagues have shown how different tools lead to different results of sentiment in a new data set of JIRA issue reports~\cite{jongeling2017negative}. They also show that "this disagreement [between different tools] can lead to diverging conclusions and that previously published results cannot be replicated when different sentiment analysis tools are used." Another work also used existing tools on code review comments from the projects using Gerrit and found poor performance by the tools~\cite{ahmed2017senticr}. This establishes that reliability of a tool needs to be proven first, before the result of the tool can be used in any further analysis.
+Jongeling and his colleagues have shown 
+how different tools lead to different results of sentiment 
+in a new data set of JIRA issue reports~\cite{jongeling2017negative}. They also show that ``this disagreement [between different tools] 
+can lead to diverging conclusions 
+and that previously published results cannot be replicated 
+when different sentiment analysis tools are used.'' 
+Another work also used existing tools 
+on code review comments from Gerrit 
+and found a poor performance by the tools~\cite{ahmed2017senticr}. This establishes that reliability of a tool needs to be proven first, before the result of the tool can be used in any further analysis.
 
-Just as Jongeling and colleagues evaluated the reliability of four sentiment analysis tools over the data mined from Apache's JIRA-based repository, we also perform a similar evaluation over a new dataset of GitHub comments with an addition of a recent tool that was specifically built for software engineering domain. Moreover, we also extend our evaluation towards the reliability of politeness analysis on GitHub comments, setting the foundation for the other types of affect analyses in the future. 
-We choose GitHub
-as it is a large code host and 
-the comments are representative of developers' discussion in general.  
+Just as Jongeling and colleagues 
+evaluated the reliability of four sentiment analysis tools, 
+we also perform a similar evaluation 
+over a new dataset of GitHub comments 
+with addition of tools 
+that are specifically built for the software engineering domain. Moreover, we also extend our evaluation 
+towards the reliability of politeness analysis 
+on GitHub comments.  
    
 
 \section{Methodology}
