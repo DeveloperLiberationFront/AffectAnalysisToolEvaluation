@@ -436,32 +436,46 @@ and "very impolite" and "impolite" into one group of "impolite".
 
 \subsection{Tool Selection}
 Sentiment analysis is an active field of research 
-in the past decade 
+%in the past decade 
 and also possesses commercial interest. 
-Hence there are a lot of tools available 
-which rate a text based on its emotional polarity. 
+Hence there are a lot of tools available for this. 
 Jongeling and colleagues point out four tools 
 as the most commonly used for sentiment analysis 
 across all the domains 
 including software engineering research 
 (SentiStrength, NLTK, Alchemy, Stanford NLP).
-These tools, however, are trained on corpora that are not related to software engineering.
+These tools, however, 
+are trained on corpora 
+that are not related to software engineering.
 Therefore, we take two other tools that have been trained on a dataset relevant to developer discussions (Senit4SD, SentiCR). 
 % We also take another tool from a recent paper, Senti4SD~\cite{calefato2017sentiment}, into consideration as it is claimed to be "specifically trained to support sentiment analysis in developers' communication channels". We select these 5 tools as popular sentiment analysis tools.
 \newline
 \indent \textbf{SentiStrength:} Thelwall and colleagues' SentiStrength~\cite{thelwall2010sentiment} 
-was developed based on MySpace comments and 
-has a ``word strength list'' at the core of its algorithm. 
-The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards,sinha2016analyzing} in recent studies. SentiStrength assigns an integer value between 1 to 5 for positive sentiment and -1 to -5 for negative sentiment. We add both the rating for a text, and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero and "neutral" otherwise. This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
+was developed based on MySpace comments 
+and has a ``word strength list'' 
+at the core of its algorithm. 
+The tool has been frequently used in software engineering research~\cite{garcia2013role,guzman2014sentiment,novielli2015challenges,guzman2013towards,sinha2016analyzing}. 
+SentiStrength assigns 
+an integer value between 1 to 5 for positive sentiment 
+and -1 to -5 for negative sentiment. 
+We add both the rating for a text, 
+and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero 
+and "neutral" otherwise. 
+This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
 \newline
 \indent\textbf{Alchemy:} IBM's Alchemy 
-provides a text-processing API which returns a label for sentiment (positive/neutral/negative) for each text with score between -1 to +1 with 0 being neutral, +1 being most positive and -1 being most negative. We only the label into account.
+provides a text-processing API 
+which returns a label for sentiment 
+(positive/neutral/negative). 
 \newline
 \indent\textbf{NLTK:} Bird and colleagues' NLTK~\cite{bird2009natural}, 
 which uses multiple corpora in its development, 
 has also been used in previous works 
 in the Software engineering domain~\cite{pletea2014security,rousinopoulos2014sentiment}. 
-We use an API provided in \href{www.text-processing.com}{www.text-processing.com} to get the sentiment analysis. For each text, it returns a label (positive/neutral/negative) with a score between 0 to 1 for each of the 3 categories with 1 being its highest intensity towards positive. We only take the label into account here too.
+We use an API provided in \href{www.text-processing.com}{www.text-processing.com} 
+to use this tool. 
+For each text, it also returns a sentiment label
+(positive/neutral/negative).
 \newline
 \indent\textbf{Stanford NLP:} Socher and colleagues' Stanford NLP 
 divides the text into sentences, 
@@ -470,26 +484,36 @@ on each sentence
 by generating sentiment treebank 
 through Recursive Neural Tensor Network~\cite{socher2013recursive}.
 It was trained on movie review excerpts 
-from the rottentomatoes.com website. 
-It returns an integer score for each sentence (0 for neutral, 1 for positive, -1 for negative) indicating its sentiment label. We rate a text under "positive" or "negative" based on the category that has greater number of sentences and "neutral" otherwise. This approach is similar to that of SentiStrength.
+from the \url{rottentomatoes.com} website. 
+It returns an integer score for each sentence 
+(0 for neutral, 1 for positive, -1 for negative) 
+indicating its sentiment label. 
+We rate a text under "positive" or "negative" 
+based on the category that has greater number of sentences 
+and "neutral" otherwise. 
+This approach is similar to that of SentiStrength.
 \newline
 \indent\textbf{Senti4SD:} This tool, 
 developed by Calefato and colleagues~\cite{calefato2017sentiment}, classifies each text by labeling their sentiment 
-as positive, negative or neutral 
+as positive, negative or neutral.
 The tool was built
 from scratch using 
 questions, answers and comments 
 from StackOverflow as its training data. 
-Hence it has the claim to be of closer relevance to Software Engineering domain.
+Hence it has the claim to be of closer relevance to 
+the software engineering domain.
 \newline
 \indent \textbf{SentiCR:} Ahmed and colleagues' SentiCR~\cite{ahmed2017senticr} 
 is trained on a dataset 
 that comprises of 
 code review comments from Gerrit and 
 two other datasets developed 
-in prior works~\cite{calefato2017sentiment,ortu2016emotional} using supervised learning techniques. 
+in prior works~\cite{calefato2017sentiment,ortu2016emotional} 
+using supervised learning techniques. 
 Based on the oracle, 
-the tool also return positive, neutral and negative.
+the tool also return a sentiment label 
+for a text 
+(positive, neutral and negative).
 \newline
 \newline
 For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. 
@@ -498,9 +522,19 @@ that represent requests/questions,
 the tool identifies general patterns of politeness 
 in written texts and 
 has been used in recent software engineering studies.
-Ortu and colleagues have used this tool in software engineering research over a dataset where they collected data from the Apache Software Foundation Issue Tracking system, the JIRA repository~\cite{ortu2015would,ortu2015bullies}. They also show that sentiment and politeness are independent metrics having a weak correlation between them in one of their studies~\cite{ortu2015bullies}. As the tool does not have any distinct name, we will simply call it "Politeness tool". 
+Ortu and colleagues have used this tool 
+over a dataset collected from 
+the Apache Software Foundation Issue Tracking system, 
+the JIRA repository~\cite{ortu2015would,ortu2015bullies}. 
+They also show that sentiment and politeness 
+are independent metrics having a weak correlation between~\cite{ortu2015bullies}. 
+As the tool does not have any distinct name, 
+we will simply call it "Politeness tool". 
 
-\textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on "domain-independent lexical and syntactic features operationalizing key components of politeness theory, such as indirection, deference, impersonalization and modality". 
+\textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on 
+"domain-independent lexical and syntactic features 
+operationalizing key components of politeness theory, 
+such as indirection, deference, impersonalization and modality". 
 It was trained and tested 
 on different corpora (Wikipedia and Stack Exchange) 
 and hence has the claim to be domain independent. 
@@ -512,23 +546,67 @@ for each text.
 
 \subsection{RQ1 }\label{gt}
 
-In the first iteration, we had each comment rated by two coders individually on both sentiment and politeness. If for any comment, two coders agreed about the rating, we finalized that label for the comment. This resulted in 374 comments for politeness rating and 285 comments for sentiment rating. We call this first set of data as the \textit{"agreed"} set.
-In the second iteration, the Coder 1 had a discussion with each of the two other human coders. From this discussion, a conclusive rating was achieved for each of the initially disagreed comments. This resulted in the \textit{"final" }data set containing the newly negotiated ones along with the agreed ones. This procedure aligns with a previous paper~\cite{ahmed2017senticr}. Also, during this discussion, some insights about how the comments should be rated both on "politeness" and "sentiment" were noted. These findings have been presented in Sections \ref{finalpolscheme} and \ref{sentschemedis}.
+In the first iteration, 
+we had each comment rated by two coders individually 
+on both sentiment and politeness. 
+If for any comment, 
+two coders agreed about the rating, 
+we finalized that label for the comment. 
+This resulted in 374 comments for politeness rating 
+and 285 comments for sentiment rating. 
+We call this the first set of data as the \textit{"agreed"} set.
+In the second iteration, 
+the Coder 1 had a discussion 
+with each of the two other human coders. 
+From this discussion, 
+a conclusive rating was achieved 
+for each of the initially disagreed comments. 
+This resulted in the \textit{"final" }data set 
+containing the newly negotiated ones along with the agreed ones. 
+This procedure aligns with a previous paper~\cite{ahmed2017senticr}. Also, during this discussion, 
+some insights about how the comments should be rated 
+both on "politeness" and "sentiment" were noted. 
+These findings have been presented in Sections \ref{finalpolscheme} and \ref{sentschemedis}.
 
-We used both the initially agreed and final set of data to evaluate our tools for RQ2 and RQ3. The amount of test data is comparable with the data set of a previous study which took 265 labeled texts to perform the evaluation of sentiment analysis tools~\cite{jongeling2017negative}.
+We used both the initially agreed and final set of data 
+to evaluate our tools for RQ2 and RQ3. 
+The amount of test data is comparable 
+with the data set of a previous study 
+which took 265 labeled texts to 
+perform the evaluation of sentiment analysis tools~\cite{jongeling2017negative}.
 
-As mentioned before, all of the 589 comments were annotated by the Coder 1, and two other coders annotated one half of the dataset each. Table \ref{interrater} shows the inter-rater agreement. We used Weighted Cohen's Kappa because our classes in both of the ratings have an implicit ordering. When two coders labeled different polarity for their ratings (positive vs negative and polite vs impolite), we counted it as a strong disagreement (weight=2). And when one of the labels was neutral, and other was a polar one, we counted it as a weak disagreement (weight=1).
+%As mentioned before, all of the 589 comments were annotated by the Coder 1, and two other coders annotated one half of the dataset each.
+Table \ref{interrater} shows the inter-rater agreement
+during manual rating. 
+We used Weighted Cohen's Kappa 
+because our classes in both of the ratings 
+have an implicit ordering. 
+When two coders labeled different polarity 
+for their ratings 
+(positive vs negative and polite vs impolite), 
+we counted it as a strong disagreement (weight=2). 
+And when one of the labels was neutral, 
+and other was a polar one, 
+we counted it as a weak disagreement (weight=1).
 
-Coder 1 had a fair and moderate agreement with one of the coders (Coder 2) for sentiment and politeness respectively and fair with the other coder (Coder 3) in both the ratings (according to magnitude guidelines presented by Landis and Koch~\cite{landis1977measurement}). This agreement rate is similar to what Murgia and colleagues found in their work for emotions like love, sadness, fear, and joy~\cite{murgia2014developers} and points towards the subjectivity of these affects.
+Coder 1 had a fair and moderate agreement 
+with one of the coders (Coder 2) 
+for sentiment and politeness respectively and 
+fair with the other coder (Coder 3) in both the ratings 
+(according to magnitude guidelines presented by Landis and Koch~\cite{landis1977measurement}). 
+This agreement rate is similar to what 
+Murgia and colleagues found in their work 
+for emotions like love, sadness, fear, and joy~\cite{murgia2014developers} and 
+points towards the subjectivity of these affects.
 However, 
-Coder 1's agreement on politeness 
-is higher than sentiment 
-with both the other coders. 
+Coder 1's agreement with both the other coders
+on politeness 
+is higher than sentiment. 
 One reason behind this can be 
 that the annotation scheme for politeness 
 provided to the coders 
 was more detailed with relevant examples 
-than the scheme for sentiment. 
+than the simple scheme for sentiment. 
 
 \vspace{3mm}
 \noindent\fbox{%
@@ -555,20 +633,58 @@ than the scheme for sentiment.
 \end{table}
 
 % The author then sat with each of the other coder to discuss about the disagreed comments. Then upon discussion, the raters came for a final rating for all of the comments. now pos was , neg was and neu. similarly pol, neu and impolite was . The raters also discussed the reason behind choosing the final rating for them and how the annotation scheme should be modified or added to improve.
-While we had substantial amount of disagreement between the coders in the first iteration and hence found the inconsistency of human rating, the coders reached a conclusion for the disagreed comments through discussion afterwards. This way, we complete a data set of comments that are hand-rated by humans and use it as a benchmark for our evaluation in RQ2 and RQ3.
+While we had substantial amount of disagreement 
+between the coders in the first iteration 
+and hence found the inconsistency of human rating, 
+the coders reached a conclusion for the disagreed comments 
+through discussion afterwards. 
+This way, we complete a data set of comments 
+that are hand-rated by humans and 
+use it as a benchmark for our evaluation in RQ2 and RQ3.
 
 \subsection{RQ2}
-The initially agreed dataset contained 66 positives, 20 negatives, 198 neutral and 1 sarcasm out of total 285 comments. And for the final dataset, we got 93 positives, 73 negatives, 419 neutral and 4 sarcasm out of 589 comments. As our dataset is heavily "neutral" biased, only F-measures for the tools would be a misleading metric as the agreement by chance would be pretty high. So, we also calculated Weighted Cohen's Kappa as before, to compare the tools' output with the final human rating. We got an output for each comment by all the tools except Alchemy, which failed to give an output for 46 and 70 comments respectively for the agreed and the final data set. 
-For the first set of agreed data in Table \ref{sentfirst}, Senti4SD turned out to have the best performance among the tools with a  moderate agreement rate, .53. One point to note from the result is the relatively low F-measures with a low recall of negative comments for all the tools including Senti4SD compared to neutral and positive comments. This confirms the "negative bias" of the existing tools, that is the misclassification of neutral
-technical texts as emotionally negative~\cite{blaz2016sentiment,novielli2015challenges,calefato2017sentiment}.
+The initially agreed dataset contained 
+66 positives, 20 negatives, 198 neutral and 1 sarcasm 
+out of total 285 comments. 
+And for the final dataset, 
+we got 93 positives, 73 negatives, 419 neutral and 4 sarcasm 
+out of 589 comments. 
+As our dataset is heavily "neutral" biased, 
+only F-measures for the tools would be a misleading metric 
+as the agreement by chance would be pretty high. 
+So, we also calculated Weighted Cohen's Kappa as before, 
+to compare the tools' output with the final human ratings. 
+We got an output for each comment by all the tools except Alchemy, which failed to give an output for 46 and 70 comments respectively for the agreed and the final data set. 
+For the first set of agreed data in Table \ref{sentfirst}, 
+Senti4SD turned out to have the best performance among the tools. 
+One point to note from the results is 
+the relatively low F-measures with a low recall 
+of negative comments 
+for all the tools compared to 
+neutral and positive comments. 
+This confirms the "negative bias" of the existing tools, 
+that is the misclassification of neutral technical texts 
+as emotionally negative~\cite{blaz2016sentiment,novielli2015challenges,calefato2017sentiment}.
 
-In Table \ref{sentfinal}, we show the results when we compare the tools with the final dataset that also includes the initially disagreed comments. In this step, 
+In Table \ref{sentfinal}, we show the results 
+when we compare the tools with the final dataset. 
+In this step, 
 we see a major drop in the performance 
 of all the tools 
-except SentiCR
-and a similar pattern of negative comments still doing worse.
+except for SentiCR
+and a similar pattern of negative comments 
+still doing worse.
 
-The drop in the performance perhaps is not that surprising as we now added the comments that the human raters initially disagreed on between them. It indicates that these comments are harder to measure and there remain subtle aspects of subjectivity in these comments. However, the tools' performance over the final and full dataset tells us about the overall unreliability of these tools.
+The drop in the performance perhaps 
+is not that surprising 
+as we now added the comments 
+that the human raters initially disagreed on between them. 
+It indicates that these comments are harder to measure 
+due to subtle subjectivity.
+%and there remain subtle aspects of subjectivity in these comments. 
+However, the tools' performance 
+over both the final and full dataset 
+tells us about their overall unreliability.
 
 
 \vspace{3mm}
