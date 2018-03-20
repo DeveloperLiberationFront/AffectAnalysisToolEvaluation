@@ -48,7 +48,7 @@ that the tools are less effective when applied to new domains they
 were not trained on~\cite{novielli2015challenges,gamon2005pulse}. 
 In our domain, Jongeling and colleagues have 
 shown that different sentiment analysis tools yield different 
-results when used on data from JIRA repository~\cite{jongeling2017negative}. 
+results when used on data from a JIRA repository~\cite{jongeling2017negative}. 
 %also tools for StackOverflow might not work on issues (for example). no nedd
 Hence, understanding the reliability of these tools will help 
 software engineering researchers know whether they can use these
@@ -88,10 +88,10 @@ to study commit comments~\cite{guzman2014sentiment},
 while Pletea and colleagues tried to find a correlation between security-related discussions and fluctuating sentiments~\cite{pletea2014security}. 
 Other platforms, 
 including the Gentoo community and Stack Overflow, 
-have also been studied to understand the role of developers' sentiments in the process of software engineering~\cite{garcia2013role,islam2016towards,guzman2013towards,novielli2014towards}.
+have also been studied to understand developers' 
+sentiments~\cite{garcia2013role,islam2016towards,guzman2013towards,novielli2014towards}.
 
-While most of these works have used 
-the popular common tools, 
+While most of these works have used common tools, 
 research on specialized tools for software engineering domain 
 is ongoing. 
 Customized tools try to overcome the problems 
@@ -104,13 +104,13 @@ However, they have used different or no coding schemes
 while annotating the texts by human raters, 
 which might lead them to have subtle differences in their understanding of sentiment in this domain.
 
-\subsection{Politeness Analysis in Software Engineering}
+\subsection{Politeness in Software Engineering}
 
 Politeness can be described as 
 "the practical application of good manners or etiquette"~\cite{wiki:pol}. 
 Politeness is a strong factor in social collaborations~\cite{ortu2015would,wang2008politeness}. 
 Research is also going on in the software engineering domain 
-to study the impact of politeness expressed by the developers. 
+to study the impact of politeness expressed by developers. 
 For example, Ortu and colleagues concluded that 
 "the more polite developers were, 
 the less time it took to fix an issue", 
@@ -126,11 +126,11 @@ the emotional awareness in collaborative software engineering~\cite{dewan2015tow
 However, challenges lie in correctly identifying any type of affect before we can use the data for further analysis. 
 A recent work explores the possibilities of correctly judging emotions from texts extracted from software engineering platforms~\cite{murgia2014developers}. 
 The authors found 
-poor to moderate agreements between human raters 
-on the different type of emotions. 
+poor to moderate agreement between human raters 
+on different types of emotions. 
 They conclude that 
-"more investigation is needed before 
-building a fully automatic emotion mining tool". 
+``more investigation is needed before 
+building a fully automatic emotion mining tool.''
 Besides, Novielli and colleagues point towards 
 the domain dependency of existing tools 
 which makes it harder to apply them in new corpora~\cite{novielli2015challenges}. 
@@ -145,7 +145,8 @@ Another work also used existing tools
 on code review comments from Gerrit 
 and found a poor performance by the tools~\cite{ahmed2017senticr}. 
 We find similar results also in Lin and colleagues' work~\cite{lin2018sentiment}.
-This establishes that reliability of a tool needs to be proven first, before the result of the tool can be used in any further analysis.
+This establishes that the reliability tools should be established
+before the tool can be used for further analysis.
 
 Just as Jongeling and colleagues 
 evaluated the reliability of four sentiment analysis tools, 
@@ -160,7 +161,6 @@ on GitHub comments.
 \section{Methodology}
 
 Our goal is to evaluate the reliability of sentiment and politeness analysis tools in developer discussions by examining the tools' performance over GitHub comments.
-These discussions between developers can be thought of as the gateway to understand the emotional environment of a project, and how developers get along with each other. 
 Before we evaluate the reliability of tools for doing affect analysis,
 we first need to define our gold standard for evaluation.
 Like other works~\cite{calefato2017sentiment,ahmed2017senticr}, we use human coders to create
@@ -196,7 +196,7 @@ The GitHub  documentation designates
 issue and pull request sections 
 as the appropriate place for 
 both general and specific project discussion
- between developers\footnote{\url{https://guides.github.com/features/issues/}}.
+ between developers.\footnote{\url{https://guides.github.com/features/issues/}}
  Hence, we chose comments from these discussion threads 
  to evaluate our tools on. 
 
@@ -206,7 +206,8 @@ both general and specific project discussion
 % issue and pull request sections as the appropriate place for both general and specific project discussion between developers, we investigated these discussion threads for our test corpus.
 
 To get the comments, 
-we use the GHTorrent project\footnote{http://ghtorrent.org/}. However, while GHTorrent does archive code-review comments, 
+we use the GHTorrent project.\footnote{http://ghtorrent.org/} 
+However, while GHTorrent does archive code-review comments, 
 it does not contain the general discussion comments 
 under issues and pull requests. 
 Furthermore, 
@@ -232,7 +233,7 @@ as a previous study found that
 "having more than two raters 
 does not change 
 the agreement significantly"~\cite{murgia2014developers}. 
-We made an estimation that annotation of 600 comments 
+We estimated that annotation of 600 comments 
 can be completed within reasonable time and effort.
 Adding 40 comments more as a cautionary step, 
 we randomly picked 640 comments 
@@ -242,7 +243,7 @@ represent developer discussions,
 We randomly picked 
 20 comments out of these 640 
 and manually investigated their origins.
-All the 20 comments came from 20 different projects 
+All 20 comments came from different projects 
 and the projects appear to represent valid software development.
 18 out of these 20 projects have a clear description 
 of the project in their README files.
@@ -250,7 +251,7 @@ Out of these 20 projects,
 4 projects had only 1 contributor, 
 3 projects had 2 contributors, 
 and 1 project had 4 contributors.
-Rest of the 12 projects had more than 15 contributors at least.
+The remainder of the 12 projects had at least 15 contributors.
 
 During pre-inspection, 
 we had to remove 51 comments as they were 
@@ -265,14 +266,15 @@ if the coders want to see the whole discussion
 of which a comment belongs to
 in order to have an understanding 
 of the underlying context, 
-they wouldn't be able to do so as the link is broken. 
+they wouldn't be able to do so. 
 We provide the final 589 comments to the human coders 
 removing only the HTML tags. 
 However, before feeding these comments to the tools, 
 we also remove the code snippets and URLs, 
-as they would get incorrectly processed by the tool 
-wrongly considering them as English texts 
-and hence biasing the result. 
+as they would get incorrectly processed by the tool,
+which
+wrongly considers them English texts 
+and hence may bias the result. 
 The raters were also provided with the URL of the webpage 
 containing the comment.
 Also, while we kept emoticons in the comments, 
@@ -284,7 +286,7 @@ are stored images
 that get fetched from a central hosting location.
 While we could replace the emojis 
 by their titles using the images' HTML tags, 
-the tools would have been unable to detect them 
+the tools would have been unable to detect them, 
 as they are not trained in this way.
 So we removed all the emojis 
 from the comments in our test data.
@@ -296,7 +298,7 @@ All the coders were graduate and undergraduate students
 of the Computer Science department. 
 We provided a coding guideline 
 to the raters before providing the comments, 
-explained in section \ref{sentscheme}, \ref{polscheme}. 
+explained in Sections~\ref{sentscheme} and~\ref{polscheme}. 
 The human coders had a short practice set 
 consisting of 10 sample comments 
 before starting with the main data set.
@@ -306,8 +308,8 @@ where everybody separately annotated the texts,
 Coder 1 sat with each of the other coders 
 to discuss the comments they disagreed on 
 and their rationale behind their rating. 
-This resulted in reaching a conclusion 
-for the initially disagreed comments 
+This resulted in reaching consensus 
+for the initially disputed comments 
 and bringing out insights over our coding guidelines.
 
 
@@ -331,13 +333,13 @@ and bringing out insights over our coding guidelines.
 \subsection{Sentiment Annotation Scheme}\label{sentscheme}
 
 
-As mentioned in section \ref{rwsent}, 
-previous works have used different or no coding schemes 
+As mentioned in Section~\ref{rwsent}, 
+previous work has used different or no coding schemes 
 while doing sentiment rating in the software engineering domain. 
 To not deviate a lot from the previous works, 
 but still giving our coders a basic set of strategies, 
-\textit{we make use of the simple annotation scheme 
-from a prior work developed by Mohammad}~\cite{mohammad2016practical}. 
+we make use of the simple annotation scheme 
+from a prior work developed by Mohammad~\cite{mohammad2016practical}. 
 Based on this scheme, 
 the raters were asked to label each comment as 
 either positive, negative, neutral, mixed or sarcasm. 
@@ -357,7 +359,7 @@ We could not find any commonly used politeness scheme
 to rate textual documents. 
 So, we developed and began with an experimental coding scheme\footnote{https://tinyurl.com/ycts7vhr} 
 based on the work of 
-Brown \& Levinson's politeness theory~\cite{brown1987politeness} 
+Brown and Levinson's politeness theory~\cite{brown1987politeness} 
 and Culpeper's work of impoliteness~\cite{culpeper1996towards}. 
 From these theories, 
 we select the strategies that are relevant to written communication (filtering out the non-verbal cues of politeness). 
@@ -383,9 +385,9 @@ to not to be imposed upon, intruded, or otherwise put upon.
 		\hline
 		Negative Politeness: Helping hearer's negative face & Use of Verbal Hedges: "I suggest we write it this way" & Negative Impoliteness: threatening hearer's negative face  & Direct accusation: "You made these faulty changes"\\
 		\hline
-		Indirect Politeness: Offering advice through indirect implication & "It's really cold here" could imply a request to shut the window down & Sarcasm or Mock Politeness & having -sarcastic tone: "static??? really???" \\
+		Indirect Politeness: Offering advice through indirect implication & "It's really cold here" could imply a request to shut the window down & Sarcasm or Mock Politeness & Having sarcastic tone: "static??? really???" \\
 		\hline
-		\multicolumn{2}{c|}{--} & Withhold Politeness\tablefootnote{Excluded in the modified scheme after the experiment}: Absence of politeness where it is expected & depends on context: Failing to thank somebody after a help\\
+		\multicolumn{2}{c|}{--} & Withhold Politeness:\tablefootnote{Excluded in the modified scheme after the experiment} Absence of politeness where it is expected & Depends on context: Failing to thank somebody after help\\
 		\cline{3-4}
 		% \begin{tablenotes}
 		% % \item[1] Excluded in the modified scheme after the experiment
@@ -405,7 +407,7 @@ Additionally, they were asked to give remarks
 if they found any criterion 
 that are not covered by the scheme 
 or a strategy in the scheme that
-do not align with the real situation. 
+do not align with the comment. 
 The major criteria of our initial coding scheme 
 are shown in Table~\ref{poltable}, along with examples.
 Based on this scheme, 
@@ -417,11 +419,11 @@ the frequency of strategies used in the comment
 according to the scheme 
 alongside their own judgment and the underlying context.
 
-As mentioned in section \ref{data}, 
+As mentioned in Section~\ref{data}, 
 after the first iteration of rating, 
 the Coder 1 had a discussion with the other coders 
 about judging criteria 
-and reaching a conclusion about the disagreed comments. 
+and reaching a conclusion about the disputed comments. 
 Upon the discussion, 
 we also modify our coding scheme and 
 propose a complete and final one 
@@ -433,14 +435,14 @@ between the degrees of politeness/impoliteness,
 hence we got varying judgment on them. 
 For the purpose of this study, 
 we, therefore, merged 
-"very polite" and "polite" into one single group of "polite" 
-and "very impolite" and "impolite" into one group of "impolite".
+"very polite" and "polite" into one single"polite" group,  
+and "very impolite" and "impolite" into an "impolite" group.
 
 \subsection{Tool Selection}
 Sentiment analysis is an active field of research 
 %in the past decade 
 and also possesses commercial interest. 
-Hence there are a lot of tools available for this. 
+Hence there are a lot of tools available. 
 Jongeling and colleagues point out four tools 
 as the most commonly used for sentiment analysis 
 across all the domains 
@@ -461,9 +463,9 @@ SentiStrength assigns
 an integer value between 1 to 5 for positive sentiment 
 and -1 to -5 for negative sentiment. 
 We add both the rating for a text, 
-and identify as "positive" sentiment if the sum is greater than zero, "negative" if less than zero 
+and identify "positive" sentiment if the sum is greater than zero, "negative" if less than zero 
 and "neutral" otherwise. 
-This interpretation was followed in Jongeling's work~\cite{jongeling2017negative}.
+This interpretation was used in Jongeling's work~\cite{jongeling2017negative}.
 \newline
 \indent\textbf{Alchemy:} IBM's Alchemy 
 provides a text-processing API 
@@ -473,7 +475,7 @@ which returns a label for sentiment
 \indent\textbf{NLTK:} Bird and colleagues' NLTK~\cite{bird2009natural}, 
 which uses multiple corpora in its development, 
 has also been used in previous works 
-in the Software engineering domain~\cite{pletea2014security,rousinopoulos2014sentiment}. 
+in the software engineering domain~\cite{pletea2014security,rousinopoulos2014sentiment}. 
 We use an API provided in \href{www.text-processing.com}{www.text-processing.com} 
 to use this tool. 
 For each text, it also returns a sentiment label
@@ -483,8 +485,8 @@ For each text, it also returns a sentiment label
 divides the text into sentences, 
 and performs a more advanced grammatical evaluation 
 on each sentence 
-by generating sentiment treebank 
-through Recursive Neural Tensor Network~\cite{socher2013recursive}.
+by generating a sentiment treebank 
+through Recursive Neural Tensor Networks~\cite{socher2013recursive}.
 It was trained on movie review excerpts 
 from the \url{rottentomatoes.com} website. 
 It returns an integer score for each sentence 
@@ -496,21 +498,18 @@ and "neutral" otherwise.
 This approach is similar to that of SentiStrength.
 \newline
 \indent\textbf{Senti4SD:} This tool, 
-developed by Calefato and colleagues~\cite{calefato2017sentiment}, classifies each text by labeling their sentiment 
+developed by Calefato and colleagues~\cite{calefato2017sentiment}, classifies each text by labeling sentiment 
 as positive, negative or neutral.
-The tool was built
-from scratch using 
+The tool was built using 
 questions, answers and comments 
 from StackOverflow as its training data. 
-Hence it has the claim to be of closer relevance to 
-the software engineering domain.
 \newline
 \indent \textbf{SentiCR:} Ahmed and colleagues' SentiCR~\cite{ahmed2017senticr} 
 is trained on a dataset 
 that comprises of 
 code review comments from Gerrit and 
 two other datasets developed 
-in prior works~\cite{calefato2017sentiment,ortu2016emotional} 
+in prior work~\cite{calefato2017sentiment,ortu2016emotional} 
 using supervised learning techniques. 
 Based on the oracle, 
 the tool also return a sentiment label 
@@ -518,7 +517,7 @@ for a text
 (positive, neutral and negative).
 \newline
 \newline
-For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and his colleagues~\cite{danescu2013computational}. 
+For politeness analysis, we use a tool developed by Danescu-Nicu\-lescu-Mizil and colleagues~\cite{danescu2013computational}. 
 While the tool was trained on short texts 
 that represent requests/questions, 
 the tool identifies general patterns of politeness 
@@ -527,11 +526,11 @@ has been used in recent software engineering studies.
 Ortu and colleagues have used this tool 
 over a dataset collected from 
 the Apache Software Foundation Issue Tracking system, 
-the JIRA repository~\cite{ortu2015would,ortu2015bullies}. 
+a JIRA repository~\cite{ortu2015would,ortu2015bullies}. 
 They also show that sentiment and politeness 
-are independent metrics having a weak correlation between~\cite{ortu2015bullies}. 
+are independent metrics having a weak correlation~\cite{ortu2015bullies}. 
 As the tool does not have any distinct name, 
-we will simply call it "Politeness tool". 
+we will simply call it the "politeness tool". 
 
 \textbf{Politeness tool:} This tool~\cite{danescu2013computational} tries to measure politeness based on 
 "domain-independent lexical and syntactic features 
@@ -539,7 +538,7 @@ operationalizing key components of politeness theory,
 such as indirection, deference, impersonalization and modality". 
 It was trained and tested 
 on different corpora (Wikipedia and Stack Exchange) 
-and hence has the claim to be domain independent. 
+and hence has the claim of being domain independent. 
 The tool ``predicts a politeness score between 0 to 1'' 
 for each text.   
 
@@ -554,16 +553,16 @@ on both sentiment and politeness.
 If for any comment, 
 two coders agreed about the rating, 
 we finalized that label for the comment. 
-This resulted in 374 comments for politeness rating 
-and 285 comments for sentiment rating. 
-We call this the first set of data as the \textit{"agreed"} set.
+This resulted in 374 comments for politeness 
+and 285 comments for sentiment. 
+We call this the first set of data as the "agreed" set.
 In the second iteration, 
 the Coder 1 had a discussion 
 with each of the two other human coders. 
 From this discussion, 
 a conclusive rating was achieved 
-for each of the initially disagreed comments. 
-This resulted in the \textit{"final" }data set 
+for each of the initially disputed comments. 
+This resulted in the "final" data set 
 containing the newly negotiated ones along with the agreed ones. 
 This procedure aligns with a previous paper~\cite{ahmed2017senticr}. Also, during this discussion, 
 some insights about how the comments should be rated 
@@ -601,7 +600,7 @@ points towards the subjectivity of these affects.
 However, 
 Coder 1's agreement with both the other coders
 on politeness 
-is higher than sentiment. 
+is higher than on sentiment. 
 One reason behind this can be 
 that the annotation scheme for politeness 
 provided to the coders 
@@ -636,9 +635,9 @@ than the simple scheme for sentiment.
 While we had substantial amount of disagreement 
 between the coders in the first iteration 
 and hence found the inconsistency of human rating, 
-the coders reached a conclusion for the disagreed comments 
+the coders reached a conclusion for the disputed comments 
 through discussion afterwards. 
-This way, we complete a data set of comments 
+This way, we completed a data set of comments 
 that are hand-rated by humans and 
 use it as a benchmark for our evaluation in RQ2 and RQ3.
 
@@ -651,7 +650,7 @@ we got 93 positives, 73 negatives, 419 neutral and 4 sarcasm
 out of 589 comments. 
 As our dataset is heavily "neutral" biased, 
 only F-measures for the tools would be a misleading metric 
-as the agreement by chance would be pretty high. 
+as the agreement by chance would be high. 
 So, we also calculated Weighted Cohen's Kappa as before, 
 to compare the tools' output with the final human ratings. 
 We got an output for each comment by all the tools except Alchemy, which failed to give an output for 46 and 70 comments respectively for the agreed and the final data set. 
@@ -674,7 +673,7 @@ except for SentiCR
 and a similar pattern of negative comments 
 still doing worse.
 The performance drop may indicate
-that the initially disagreed comments
+that the initially disputed comments
 are harder to rate.
 %and there remain subtle aspects of subjectivity in these comments. 
 However, the tools' performance 
@@ -691,7 +690,7 @@ tells us about their overall unreliability.
 
 \begin{table}
 \centering
-\caption{Performance of Sentiment Analysis Tools for First Set of  Agreed Data}
+\caption{Performance of Sentiment Analysis Tools for the First Set of  Agreed Data}
 \label{sentfirst}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -716,7 +715,7 @@ SentiCR & 0.13 & 57.04\% & 29.70\% & 29.91\% \\
 
 \begin{table}
 \centering
-\caption{Performance of Sentiment Analysis Tools for Final Set of Data}
+\caption{Performance of Sentiment Analysis Tools for the Final Set of Data}
 \label{sentfinal}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -754,10 +753,10 @@ for each text for its politeness,
 we have to first select a threshold 
 where we can separate the polite, impolite and neutral comments. 
 Over the first data set, we calculated F-measures 
-at every .01 interval within the 0-1 range. 
+at every .01 interval within the 0--1 range. 
 We found the highest F-measure 
-being 69.61\%  for polite at .57 threshold 
-and 77.05\% for neutral at .65 threshold. 
+being 69.61\%  for polite at a .57 threshold 
+and 77.05\% for neutral at a .65 threshold. 
 So, intuitively the ideal threshold 
 to separate polite vs neutral 
 would fall somewhere between that range. 
@@ -771,9 +770,9 @@ However, we found
 very poor results
 for impolite comments 
 as F-measures at all the ranges were below 20\%. 
-Thus, \textbf{we concluded that 
+Thus, we concluded that 
 the tool has low reliability 
-in deciding if a comment in our data set is impolite or not}. 
+in deciding if a comment in our data set is impolite or not. 
 Therefore, we decided to merge the "neutral" and "impolite"
 into one single class that is "non-polite". 
 Thus, eventually, we use the tool 
@@ -785,10 +784,6 @@ Similar to RQ1,
 we use Cohen's kappa (unweighted) and F-measures as our metrics. Table \ref{polresult} shows that this tool also 
 has "moderate" agreement over the first agreed data set 
 while a "fair" agreement over the final data set. 
-We have the same rationale like sentiment analysis tools 
-for the drop of performance 
-as the added comments in the final dataset 
-that were initially disagreed are harder to rate.  
 
 \vspace{3mm}
 \noindent\fbox{%
@@ -817,9 +812,8 @@ $\kappa$ & polite & neutral & $\kappa$ & polite & neutral \\
 \section{Discussion}
 \subsection{Final Politeness Coding Scheme} \label{finalpolscheme}
 
-The coders had a discussion among themselves 
-on the initial politeness coding scheme and 
-we made some changes to the scheme based on that. 
+The coders discussed and then changed 
+the initial politeness coding scheme. 
 We differentiated between implicit politeness 
 and \textbf{explicit markers} of politeness 
 within a text. 
@@ -827,7 +821,7 @@ For example, one coder rated a comment polite
 if he felt that the commenter is giving a detailed explanation 
 of something and 
 hence putting more effort into the communication. 
-However, all the coders agreed that 
+All the coders agreed that 
 this is an implicit form of politeness. 
 Another example would be the fourth strategy of impoliteness 
 in our initial coding scheme which 
@@ -839,8 +833,8 @@ and cannot be clearly derived from a single comment
 without knowing the whole underlying context. 
 Whereas, other strategies involve "explicit markers" 
 like verbal hedges, indirection, and use of positive lexicons. 
-So for the comments that were initially disagreed, 
-we only counted those as 'polite' 
+So for the comments that were initially disputed, 
+we only counted those as `polite' 
 which have an explicit marker of politeness 
 within the text itself.
 
@@ -863,7 +857,7 @@ came from how to rate the statements of technical details
 containing \textit{bug reports} or \textit{bug fixes} 
 (e.g. "fixed", "done") 
 which are commonplace in software engineering and 
-don't necessarily always express an emotion. 
+don't necessarily express an emotion. 
 One coder initially rated all texts indicating bug fixes 
 as positive 
 as these comments mark positive results. 
@@ -876,11 +870,10 @@ in a software project.
 The coders reached a consensus 
 that if a text doesn't explicitly show an emotion, 
 we would rate it as neutral. 
-%The initially disagreed comments were resolved on such conclusions. 
-These confusions points 
+%The initially disputed comments were resolved on such conclusions. 
+This confusion points 
 to the necessity of a customized annotation scheme 
-for the software engineering 
-which everyone can use as a standard one. 
+for software engineering. 
 
 \subsection{Tools' failure: Case analysis}
 %To pinpoint the weaknesses in automated rating, we looked at the comments where the tools had a different rating from the humans.  For the sentiment analysis tools, we perform a case study on Senti4SD, which had the best performance.
@@ -910,7 +903,7 @@ the tool could not appropriately find
 the eventual intention of the commenter. 
 Other sentiment analysis tools did not 
 exactly have the same points of differences 
-and had varying precision and recalls over all the classes. 
+and had varying precision and recall over all the classes. 
 %The rationale behind this discrepancy is that different tools had different training data and therefore had different weights to different judging criteria. This also shows us the need of having a standard annotation scheme for software engineering domain, and train a tool based on that.
 
 For the politeness tool, 
@@ -926,12 +919,12 @@ Also, even for some explicit syntactic features,
 like direct orders (e.g. "Do not add", "see above", "replace") 
 came out as neutral by the tool. 
 However, having distinct cases of failures for these tools 
-indicate that an extensive training might help to improve.
+suggests improvement is possible.
 
 \section{Threats to Validity}
 One major threat of our study is 
 that we only had two human coders 
-per each comment to annotate. 
+per each comment. 
 Given by the subjectivity of such analysis, 
 more coders could ensure more reliable human evaluation.
 Also, we had one coder rating all the comments 
@@ -942,12 +935,12 @@ However, we also present the results over the comments
 for which both the coders agree on the label 
 without having a prior discussion.
 Besides this, Danescu-Niculescu-Mizil and his colleagues 
-for their politeness tool used Brown \& Levinson's theory 
+for their politeness tool used Brown and Levinson's theory 
 to extract features of politeness out of the data 
 that were manually rated. 
 Our coding scheme is also based on the same politeness theory. 
 This biases our annotation of the comments 
-towards the tool's internal working. 
+towards the tool's internal workings. 
 %If we had a different or no coding scheme during the rating, the performance of the politeness with respect to the human rating could have come out worse. 
 Also, 
 we removed the URLs 
@@ -958,7 +951,7 @@ which creates a difference between the inputs.
 %However, 
 %the human coders did not take the URLs into account 
 %as they are not commentary texts.
-Finally, while we randomly picked 589 comments, they might not be representative of the whole GitHub community.
+Finally, while we randomly picked 589 comments, they may not be representative of the whole GitHub community.
 
 \section{Conclusion}
 Studying the emotions expressed by the developers
@@ -979,7 +972,12 @@ in the software engineering domain.
 
 %Through these conclusions, we demonstrate the need for a standard and more concrete definition of affects and their coding schemes to develop a reliable ground truth for affect analysis and train customized tools for the software engineering domain.  
 
+\section*{Acknowledgements}
 
+Thanks to the Developer Liberation Front and anonymous
+reviewers for their helpful suggestions.
+This material is based in part upon work supported by the 
+National Science Foundation under grant number 1252995.
 
 
 
@@ -1213,6 +1211,5 @@ this paper are to articles which have nothing to
 do with the present subject and are used as
 examples only.
 %\end{document}  % This is where a 'short' article might terminate
-
 
 \end{comment}
